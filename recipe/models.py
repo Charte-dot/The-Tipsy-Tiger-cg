@@ -19,9 +19,9 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipe_post")
     created_on = models.DateTimeField(auto_now_add=True)
     update_on = models.DateTimeField(auto_now_add=True)
-    content = models.TextField(blank=True)
-    process = models.TextField(blank=False)
+    about = models.TextField(blank=True)
     ingredients = models.TextField(blank=False)
+    steps = models.TextField(blank=False)
     serves = models.PositiveIntegerField(
         default=1,
         validators=[
