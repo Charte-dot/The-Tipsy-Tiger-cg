@@ -1,1 +1,1 @@
-web: gunicorn The-Tipsy-tiger-cg.wsgi
+web: gunicorn thetipsytiger.wsgi
