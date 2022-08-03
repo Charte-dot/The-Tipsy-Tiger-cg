@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views import generic
+from .models import Recipe
 
-# Create your views here.
+
+class MainPage(generic.TemplateView):
+    """Displays main page for site"""
+    template_name = 'main.html'
