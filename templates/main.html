@@ -1,7 +1,13 @@
 {% load static %}
+
 <html class="h-100">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>The Tipsy Tiger Cocktail Guide</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,10 +28,38 @@
     <div class="container-fluid hero-container ">
         <div class="row hero-overlay hero-image img-fluid">
             <div class="col-12 hero-text">
-            <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551788/My_project-1_9_vnwqxh.png" class="logo" alt="tipsy tiger logo">
+                <div class="container-fluid">
+
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551788/My_project-1_9_vnwqxh.png"
+                            class="logo" alt="">
+                        <div class="text-center">
+                            <h1 class="intro">You must be Over 18, Please enter your Date of Birth</h1>
+                        </div>
+
+                        <form method="Post">
+                            {% csrf_token %}
+
+                            <div class="form-group col-lg-8 col-md-10 mx-auto">
+                                <label for="date of birth"></label>
+                                <input type="date" class="form-control" id="" placeholder="Enter date of birth" name="">
+                            </div>
+                            <button type="submit" class="btn-lg">Enter</button>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a class="small" href="#">Already have an account? Login!</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</body>
+
+    </div>
+    </div>
+
 
 </body>
+
+</html>
