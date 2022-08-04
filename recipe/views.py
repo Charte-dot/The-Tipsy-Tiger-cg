@@ -12,6 +12,12 @@ class MainPage(generic.TemplateView):
 
 
 class AgeCheckView(CreateView):
+    """Displays age check on main page"""
     form_class = AgeCheck
     sucess_url = reverse_lazy('main')
     template_name = 'recipe/main.html'
+    
+
+class Index(generic.TemplateView):
+    """Displays home page for site"""
+    template_name = 'index.html'

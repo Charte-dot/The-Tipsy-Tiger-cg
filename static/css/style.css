@@ -1,5 +1,5 @@
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551793/My_project-1_2_w23mi3.jpg');
+.screen {
+    background: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)), url('https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551793/My_project-1_2_w23mi3.jpg');
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -8,20 +8,11 @@ body {
     background-size: cover;
 }
 
-.logo {
-    height: 50%;
-    width: 15%;
-    repeat: no-repeat;
-    position: center;
-    margin: 0;
-    margin-left: 44%;
-    margin-right: 45%;
-    margin-top: 3%;
 
-}
 
 .form-control {
-    background: rgba(255, 252, 252, 0.362);
+    margin-top: 10%;
+    background: rgba(0, 0, 0, 0.303);
     border-style: groove;
     border-color: black;
     font-family: Special Elite, sans-serif;
@@ -32,10 +23,10 @@ body {
 }
 
 .intro {
+    margin-top: 50%;
     font-family: Special Elite, sans-serif;
-    color: white;
+    color: rgb(255, 255, 255);
     position: center;
-    margin: 0;
     font-size: 200%;
 }
 
@@ -49,7 +40,26 @@ body {
     margin-top: 3%;
 }
 
+
 .small {
     font-family: sans-serif;
     color: white;
 }
+
+#logo {
+    margin-top: 0;
+    width: 200px;
+    height: 150px;
+}
+
+.hero-image {
+    width: 80vw;
+    height: 80vh;
+    background: url('https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551793/My_project-1_2_w23mi3.jpg');
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
