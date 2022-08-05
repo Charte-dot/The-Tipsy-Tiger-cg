@@ -24,26 +24,66 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #fff;">
-        <div class="container-fluid" id="nav-header">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/logo.png' %}" alt="tiger and cocktail glass"
-                    class="d-inline-block align-text-top" id="logo">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" id="nav-header"></div>
+        <a class="navbar-brand" href="{% url 'home' % }">
+            <img src="{static 'images/logo.png'} " alt="Tiger and cocktail glass" class="d-inline-block align-text-top"
+            id="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <main class="flex-shrink-0 main-bg">
-                    {% block content %}
-                    <!-- Content Goes here -->
-                    {% endblock content %}
-                </main>
+        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link {% if '/about/' in request.path %}active{% endif %}" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link {% if '/recipes/' in request.path %}active{% endif %}"
+                href="{% url 'recipes' %}">Recipes</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link {% if '/myrecipes/' in request.path %}active{% endif %}" href="{% url 'myrecipes' %}">My
+                Recipes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link {% if '/accounts/signup/' in request.path %}active{% endif %}"
+                href="{% url 'account_signup' %}">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if '/accounts/login/' in request.path %}active{% endif %}"
+                href="{% url 'account_login' %}">Sign In</a>
+        </li>
+        {% endif %}
+        </ul>
 
-                <!-- Footer -->
-                <footer class="footer mt-auto py-3 dark-bg">
-                    <p class="m-0 text-center text-white">Created by Charte</p>
-                    <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-                        <i class="fab fa-twitter-square ms-3"></i>
-                        <i class="fab fa-instagram-square ms-3"></i>
-                        <i class="fab fa-youtube-square ms-3"></i></p>
-                </footer>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 dark-bg">
+        <p class="m-0 text-center text-white">Created by Charte</p>
+        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+            <i class="fab fa-twitter-square ms-3"></i>
+            <i class="fab fa-instagram-square ms-3"></i>
+            <i class="fab fa-youtube-square ms-3"></i></p>
+    </footer>
 </body>
 
 </html>
