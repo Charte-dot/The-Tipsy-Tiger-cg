@@ -24,11 +24,10 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #fff;">
         <div class="container-fluid" id="nav-header"></div>
         <a class="navbar-brand" href="{% url 'home' % }">
-            <img src="{static 'images/logo.png'} " alt="Tiger and cocktail glass" class="d-inline-block align-text-top"
-            id="logo">
+            <img src="{% static 'images/logo.png' %} " alt="Tiger and cocktail glass" class="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,17 +49,18 @@
                 Recipes</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+            <a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
         </li>
         {% else %}
         <li class="nav-item">
             <a class="nav-link {% if '/accounts/signup/' in request.path %}active{% endif %}"
-                href="{% url 'account_signup' %}">Register</a>
+                href="{% url 'register' %}">Register</a>
         </li>
         <li class="nav-item">
             <a class="nav-link {% if '/accounts/login/' in request.path %}active{% endif %}"
-                href="{% url 'account_login' %}">Sign In</a>
+                href="{% url 'login' %}">Sign In</a>
         </li>
+        
         {% endif %}
         </ul>
 
