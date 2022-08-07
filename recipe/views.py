@@ -1,11 +1,62 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
-from django.views.generic import CreateView, TemplateView
-from django.urls import reverse_lazy
-from django.contrib import messages
-from .forms import AgeCheck
+from django.views.generic import TemplateView
+from django.contrib.auth.forms import UserCreationForm
 from .models import Recipe
+from django.contrib.auth import authenticate, login, logout
+
+from django.contrib import messages
+
+from django.contrib.auth.decorators import login_required
+
+# Views created here
+
+from .models import *
+from .forms import CreateUserForm
+
+
+def SignUpPage(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        form = CreateUserForm()
+        if request.method == 'POST':
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for ' + user)
+
+                return redirect('login')
+
+            context = {'form': form}
+            return render(request, 'account/signup.html', context)
+
+
+def LogInPage(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.info(request, 'Username or password is incorrect')
+
+            context = {}
+            return render(request, 'account/login.html', context)
+        
+
+def LogOutUser(request):
+    logout(request)
+    return redirect('login')      
 
 
 class MainPage(generic.TemplateView):
@@ -13,14 +64,7 @@ class MainPage(generic.TemplateView):
     template_name = 'main.html'
 
 
-class AgeCheckView(CreateView):
-    """Displays age check on main page"""
-    form_class = AgeCheck
-    sucess_url = reverse_lazy('main')
-    template_name = 'main.html'
-
-
-class Index(generic.ListView):
+class HomePage(generic.ListView):
     """Displays home page for site"""
     model = Recipe
     template_name = 'index.html'

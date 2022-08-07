@@ -2,8 +2,6 @@
     background: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)), url('https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551793/My_project-1_2_w23mi3.jpg');
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -23,7 +21,15 @@
 }
 
 .intro {
-    margin-top: 50%;
+    margin-top: 30%;
+    font-family: Special Elite, sans-serif;
+    color: rgb(255, 255, 255);
+    position: center;
+    font-size: 200%;
+}
+
+.intro2 {
+    margin-top: 10%;
     font-family: Special Elite, sans-serif;
     color: rgb(255, 255, 255);
     position: center;
