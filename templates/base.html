@@ -49,36 +49,45 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link {% if '/myrecipes/' in request.path %}active{% endif %}"
-                        href="{% url 'myrecipes' %}">My
-                        Recipes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link {% if '/accounts/signup/' in request.path %}active{% endif %}"
-                        href="{% url 'signup' %}">Register</a>
+                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if '/accounts/login/' in request.path %}active{% endif %}"
-                        href="{% url 'login' %}">Sign In</a>
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                 </li>
                 {% endif %}
+
             </ul>
 
         </div>
         </div>
     </nav>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
 
+            </div>
+        </div>
+    </div>
 
-    <main class="flex-shrink-0 main-bg">
+    <main>
+
         {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
+        <!-- Content -->
+        {% endblock %}
+
     </main>
+
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">

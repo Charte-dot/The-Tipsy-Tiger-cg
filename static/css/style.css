@@ -6,46 +6,45 @@
     background-size: cover;
 }
 
-
-
-.form-control {
-    margin-top: 10%;
-    background: rgba(0, 0, 0, 0.303);
-    border-style: groove;
-    border-color: black;
-    font-family: Special Elite, sans-serif;
-    color: rgb(255, 255, 255) ;
-    font-size: 180%;
-    position: center;
-
-}
-
-.intro {
-    margin-top: 30%;
-    font-family: Special Elite, sans-serif;
-    color: rgb(255, 255, 255);
-    position: center;
-    font-size: 200%;
-}
-
-.intro2 {
-    margin-top: 10%;
-    font-family: Special Elite, sans-serif;
-    color: rgb(255, 255, 255);
-    position: center;
-    font-size: 200%;
-}
-
-.btn-lg {
+.text-center {
     color: white;
-    background-color: rgb(255, 119, 0);
-    position: center;
-    margin: 0;
-    margin-left: 44%;
-    margin-right: 45%;
-    margin-top: 3%;
 }
 
+
+.intro1 {
+    margin-top: 50%;
+    font-family: Special Elite, sans-serif;
+    color: rgb(255, 255, 255);
+    position: center;
+    font-size: 200%;
+}
+.intro2 {
+font-family: Special Elite, sans-serif;
+color: rgb(255, 255, 255);
+position: center;
+font-size: 200%;
+}
+
+a {
+    color: white; 
+    text-decoration: none; 
+}
+
+a:hover {
+    color: white; 
+    text-decoration: none;
+}
+
+.btn-secondary {
+    color: azure;
+    background-color: rgb(255, 119, 0);
+    text-decoration: none;
+    display: inline;
+}
+
+.login-main:hover {
+    color: orangered;
+}
 
 .small {
     font-family: sans-serif;
