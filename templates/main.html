@@ -37,15 +37,15 @@
             <!-- <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659639221/My_project-1_13_d3yuaj.png"
                             class="logo col-lg-8 col-md-10 mx-auto" alt=""> -->
             <div class="text-center col-lg-8 col-md-10 mx-auto">
-                <h1 class="intro1">You must be Over 18 to Enter</h1>
-                <h1 class="intro2">The Tipsy Tiger Cocktail Guide</h1>
+                <h1 class="intro1">Welcome to The Tipsy Tiger Cocktail Guide</h1>
+                <h1 class="intro2">Please, verify your age to enter.</h1>
             </div>
 
             <body>
 
-                <div  class="col text-center">
-                    <button type="button" class="btn-secondary btn-lg "><a href="{% url 'home' %}">Yes! I AM OVER 18</a></button>
-                    <button type="button" class="btn-outline-warning btn-lg"><a href="{% url 'decline' %}">I AM NOT 18 YET!</a></button>
+                <div class="col text-center">
+                    <button type="button" class="btn-secondary btn-lg "><a href="{% url 'home' %}">I AM OVER 18</a></button>
+                    <button type="button" class="btn-outline-warning btn-lg"><a href="{% url 'decline' %}">I AM UNDER 18</a></button>
                 </div>
 
         </div>
@@ -60,7 +60,7 @@
 
 </div>
     <div class="col text-center">
-        <a href="{% url 'account_login' %}" class="login-main">Already have an account? Login</a></p>
+    <p class="prelogin"><a href="{% url 'account_login' %}">Already have an account? Login</a></p>
     </div>
 </form>
 </div>

@@ -8,21 +8,31 @@
 
 .text-center {
     color: white;
+    
+}
+
+.prelogin {
+    margin-top: 5%;
+    color: white;
+}
+
+.prelogin :hover {
+    color: rgb(255, 119, 0);
 }
 
 
 .intro1 {
-    margin-top: 50%;
+    margin-top: 30%;
     font-family: Special Elite, sans-serif;
     color: rgb(255, 255, 255);
     position: center;
-    font-size: 200%;
+    font-size: 300%;
 }
 .intro2 {
 font-family: Special Elite, sans-serif;
 color: rgb(255, 255, 255);
 position: center;
-font-size: 200%;
+font-size: 150%;
 }
 
 a{
@@ -54,9 +64,6 @@ a:hover {
     display: inline;
 }
 
-.login-main:hover {
-    color: orangered;
-}
 
 .small {
     font-family: sans-serif;
