@@ -25,8 +25,13 @@ position: center;
 font-size: 200%;
 }
 
-a {
+a{
     color: white; 
+    text-decoration: none; 
+}
+
+.decline {
+    color: rgb(12, 12, 12); 
     text-decoration: none; 
 }
 
@@ -42,6 +47,13 @@ a:hover {
     display: inline;
 }
 
+.btn-outline-warning {
+    color: rgb(60, 61, 61);
+    background-color: rgb(91, 91, 91);
+    text-decoration: none;
+    display: inline;
+}
+
 .login-main:hover {
     color: orangered;
 }
@@ -53,18 +65,22 @@ a:hover {
 
 .logo {
     margin-top: 0;
-    width: 200px;
+    width: 150px;
     height: 150px;
+    position: relative;
 }
 
+
 .hero-image {
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     background: url('https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551793/My_project-1_2_w23mi3.jpg');
     background-position: center;
     background-size: cover;
     margin: 0;
-    position: relative;
     background-repeat: no-repeat;
 }
 
+.navbar-brand {
+
+}

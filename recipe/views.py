@@ -6,14 +6,15 @@ from django.views.generic import TemplateView
 from .models import Recipe
 
 
-class MainPage(generic.TemplateView):
-    """Displays main page for site"""
-    template_name = 'main.html'
-
-
 class DeclinePage(generic.TemplateView):
     """Displays main page for site"""
-    template_name = 'decline.html'   
+    template_name = 'decline.html' 
+
+
+class MainPage(generic.ListView):
+    """Displays home page for site"""
+    model = Recipe
+    template_name = 'main.html'
 
 
 class HomePage(generic.ListView):
@@ -39,3 +40,4 @@ class MyRecipes(generic.ListView):
     """Displays logged in Users Recipes"""
     model = Recipe
     template_name = 'my recipes.html'
+

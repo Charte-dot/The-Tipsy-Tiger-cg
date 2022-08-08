@@ -10,5 +10,4 @@ urlpatterns = [
     path('recipelist/', views.RecipesList.as_view(), name='recipes'),
     path('myrecipes/', views.MyRecipes.as_view(), name='myrecipes'),
 
-
 ]
