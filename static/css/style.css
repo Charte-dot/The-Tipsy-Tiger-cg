@@ -71,30 +71,13 @@ a:hover {
     display: inline;
 }
 
-
-.small {
-    font-family: sans-serif;
-    color: white;
+.navbar-light {
+    height: 140px;
+    box-shadow:0px 2px 5px rgb(60, 61, 61);
 }
 
-.logo {
-    margin-top: 0;
-    width: 150px;
-    height: 150px;
-    position: relative;
-}
-
-
-.hero-image {
-    width: 100vw;
-    height: 100vh;
-    background: url('https://res.cloudinary.com/ddgxxa2hy/image/upload/v1659551793/My_project-1_2_w23mi3.jpg');
-    background-position: center;
-    background-size: cover;
-    margin: 0;
-    background-repeat: no-repeat;
-}
-
-.navbar-brand {
-
+.nav-item {
+    font-family: Itim, sans-serif;
+    font-size: 150%;
+    color: rgb(60, 61, 61);;
 }
