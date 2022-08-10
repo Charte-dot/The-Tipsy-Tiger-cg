@@ -11,6 +11,7 @@
     
 }
 
+
 .prelogin {
     margin-top: 5%;
     color: white;
@@ -18,6 +19,16 @@
 
 .prelogin :hover {
     color: rgb(255, 119, 0);
+}
+
+#date {
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: white;
+    font-family: Special Elite, sans-serif;
+    font-size: 250%;
+    text-transform: uppercase;
 }
 
 .intro {
@@ -40,11 +51,6 @@ font-family: Special Elite, sans-serif;
 color: rgb(255, 255, 255);
 position: center;
 font-size: 150%;
-}
-
-a{
-    color: white; 
-    text-decoration: none; 
 }
 
 .decline {
