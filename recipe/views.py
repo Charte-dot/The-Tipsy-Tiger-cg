@@ -20,7 +20,9 @@ class MainPage(generic.ListView):
 class HomePage(generic.ListView):
     """Displays home page for site"""
     model = Recipe
+    queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
+    paginate_by = 6
 
 
 class About(generic.TemplateView):
@@ -33,7 +35,9 @@ class About(generic.TemplateView):
 class RecipesList(generic.ListView):
     """Displays view of all recipes """
     model = Recipe
+    queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
+    paginate_by = 6
 
 
 class MyRecipes(generic.ListView):
