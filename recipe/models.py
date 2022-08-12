@@ -32,14 +32,14 @@ class Recipe(models.Model):
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
 
-    EASY = 'Quick-and-easy'
-    MEDIUM = 'A-bit-Flashy'
-    HARD = 'Challenge-me'
+    EASY = 'Quick & Easy'
+    MEDIUM = 'A bit Flashy'
+    HARD = 'Challenge me'
 
     SKILL_LEVEL = [
-        (EASY, 'Quick-and-easy'),
-        (MEDIUM, 'A-bit-Flashy'),
-        (HARD, 'Challenge-me')
+        (EASY, 'Quick & Easy'),
+        (MEDIUM, 'A bit Flashy'),
+        (HARD, 'Challenge Me')
     ]
 
     skill = models.CharField(

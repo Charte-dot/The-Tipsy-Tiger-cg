@@ -6,42 +6,74 @@
     <div class="container-fluid hero-container ">
         <div class="row hero-overlay hero-image img-fluid">
             <div class="col-12 hero-text">
-                <h1></h1>
-                <p></p>
-                <p></p>
+                <h1>Welcome to the Tipsy Tiger Cocktail Guide</h1>
+                <p class="heading">You can't buy happiness, but you can prepare a cocktail...</p>
+                <p class="heading">Choose from our range of tried, tested & loved cocktails</p>
+                <p class="heading">Even add you own personal favourites</p>
                 {% if user.is_authenticated %}
                 <p class="invisible"><a href="{% url 'account_signup' %}">Join Us!</a></p>
                 {% else %}
-                <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-success">Join Us!</a></p>
+                <p><a href="{% url 'account_signup' %}"
+                        class="btn btn-lg btn-secondary date text-center col-lg-8 col-md-10 mx-auto">Join Us!</a></p>
                 {% endif %}
             </div>
             <div></div>
         </div>
     </div>
 </header>
-
 <div class="container-fluid">
+    <hr>
     <div class="row">
+        <div class="col-12">
+            <h2 class="popular"><strong> Most popular cocktails<i class="fas fa-cocktail"></i></strong></h2>
+            <p class="instructions">To view these delicious cocktail and more head to <a
+                    href="{% url 'recipes' %}">Recipes</a>.
+                To add your own cocktails, like & comment on other posts please <a
+                    href="{% url 'account_login' %}">Login</a>. If you haven't an account with us then <a
+                    href="{% url 'account_signup' %}">Register</a>.</p>
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for recipe in recipe_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
         </div>
 
     </div>
 
-    {%endblock%}
 
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for recipe in recipe_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if 'placeholder' in recipe.recipe_image.url %}
+                                    <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660314988/andrea-riezzo-1hKZ0A182Bk-unsplash_a2gicj.jpg"
+                                        alt="orange cocktail in small glass">
+                                    {% else %}
+                                    <img class="card-image" src=" {{ recipe.recipe_image.url }}"
+                                        alt="{{ recipe.title }}">
+                                    {% endif %}
+                                    <div class="card-info">
+                                        <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
+                                    </div>
+                                </div>
+                                <h3 class="recipe-title"> {{ recipe.title }}</h3>
+                                <p class="card-footer"> added by {{ recipe.author }} on {{ recipe.created_on }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {%endblock%}
