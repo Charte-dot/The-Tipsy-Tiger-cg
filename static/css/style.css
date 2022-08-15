@@ -3,6 +3,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555)), url(https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660254362/My_project-1_2_50_i0mcfy.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 3%;
 }
 
 .text-center {
@@ -71,11 +72,13 @@ a:hover {
 }
 
 
-/* Navbar */
-.navbar-brand {
+#navbarNav
+{
     height: 10%;
     width: 70%;
-}
+    background-color: rgb(248,249,250);
+    position: relative;
+} 
 
 .navbar-light {
     height: 140px;
@@ -88,14 +91,14 @@ a:hover {
     color: rgb(60, 61, 61);
 }
 
-.nav-item:hover {
+a:hover {
     background-color: rgb(255, 169, 41);
     cursor: pointer;
 }
 
 a.nav-link.active {
     color: rgb(255, 169, 41);
-    background-color: #ccc;
+    background-color: rgb(124, 124, 124);
 }
 
 a.page-link {
@@ -106,12 +109,13 @@ a.page-link {
     background-color: rgb(119, 119, 119);
 }
 
+/* Hero image */
 .hero-image {
     width: 100%;
     height: 70vh;
     background: linear-gradient(rgba(0, 0, 0, 0.403), rgba(0, 0, 0, 0.403)), url(https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660254362/My_project-1_2_50_i0mcfy.jpg);
     background-size: cover;
-    position: relative;
+
     margin: 0;
 }
 
@@ -148,7 +152,7 @@ a.page-link {
 
 .popular{
     font-family: Itim, sans-serif;
-    font-size: 140%; 
+    font-size: 180%; 
 }
 
 .instructions {

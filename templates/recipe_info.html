@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <section>
+        <!--Recipe title-->
+        <div class="row">
+            <div class=" col recipe-title">
+                <h1>{{ recipe.title }}</h1>
+            </div>
+        </div>
+
+        <!--Image for recipe-->
+        <div class="row">
+            <div class="col-sm-6 image-container card recipe-detail-image">
+                {% if "placeholder" in recipe.recipe_image.url %}
+                <img class="card-image-top"
+                    src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660314988/andrea-riezzo-1hKZ0A182Bk-unsplash_a2gicj.jpg"
+                    alt="orange cocktail in small glass">
+                {% else %}
+                <img src="{{ recipe.recipe_image.url }}" alt="{{ recipe.title }}">
+
+                {% endif %}
+
+                <p class="recipe-image info"> Recipe added by {{ user.username}} submitted on: {{ recipe.created_on }}
+                </p>
+            </div>
+
+            <!--recipe icons-->
+            <div class="col-sm-6 card recipe">
+                <div class="row">
+
+                    <!--recipe cheers-->
+                    <div class="col card-body liked-icon">
+                        {% if user.is_authenticated %}
+                        <form class="d-line" action="{% url 'recipe_cheers' recipe.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+
+                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}" >
+                                <i class="fas fa-glass-cheers"></i></button>
+                            {% else %}
+                            
+                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}" >
+                                <i class="fas fa-glass-cheers"></i></button>
+                            
+                            {% endif %}    
+                            </form> 
+                            
+                            % else %
+                            <i class="fas fa-glass-cheers" aria-hidden="true"></i>
+                            {% endif %}
+                            <p>{{ recipe.number_of_cheers }} Cheers</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}
