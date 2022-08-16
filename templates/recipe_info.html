@@ -28,45 +28,88 @@
                 </p>
             </div>
 
+            <div class="row">
+                <div class="col-12 card">
+                    <div class="card-body">
+                        <h2 class="card-title"> About this cocktail</h2>
+                        <p class="recipe-info card-text">
+                            {{ recipe.about |safe }}
+                        </p>
+                        <p class="info"> Recipe last updated on: {{ recipe.updated_on }}</p>
+                    </div>
+                </div>
+            </div>
+
             <!--recipe icons-->
             <div class="col-sm-6 card recipe">
                 <div class="row">
 
-                    <!--recipe cheers-->
+                    <!--recipe cheers(likes)-->
                     <div class="col card-body liked-icon">
                         {% if user.is_authenticated %}
                         <form class="d-line" action="{% url 'recipe_cheers' recipe.slug %}" method="POST">
                             {% csrf_token %}
                             {% if liked %}
 
-                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}" >
+                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}">
                                 <i class="fas fa-glass-cheers"></i></button>
                             {% else %}
-                            
-                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}" >
+
+                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}">
                                 <i class="fas fa-glass-cheers"></i></button>
-                            
-                            {% endif %}    
-                            </form> 
-                            
-                            % else %
-                            <i class="fas fa-glass-cheers" aria-hidden="true"></i>
+
                             {% endif %}
-                            <p>{{ recipe.number_of_cheers }} Cheers</p>
+                        </form>
 
+                        % else %
+                        <i class="fas fa-glass-cheers" aria-hidden="true"></i>
+                        {% endif %}
+                        <p>{{ recipe.number_of_cheers }} Cheers</p>
                     </div>
+                </div>
 
+                <!--Comment count-->
+                <div class="col-1">
+                    {% with comments.count as total_comments %}
+                    <i class="fas fa-comment"></i>
+                    <p>{{ total_reviews }} reviews</p>
+                    {% endwith %}
+
+                    <!--Recipe card icons-->
+                    <div class="card-icons">
+                        <ul>
+                            <!--No of servings-->
+                            <li>
+                                <i class="fas fa-glass-whiskey-rocks"></i>
+                                <p>{{ recipe.servings }} serves</p>
+                            </li>
+                            <!--Skill level-->
+                            <li>
+                                <i class="fa-solid fa-layer-group"></i>
+                                <p>{{ recipe.skill }} Skill level</p>
+                            </li>
+                            <!--Recipe alcohol base-->
+                            <li>
+                                <i class="fa-solid fa-wine-bottle"></i>
+                                <p>{{ recipe.base }}</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+    </section>
 
+    <section>
+        <div class="row">
+            <div class="col-12 md-6 card-ingrediants">
+                <div class="card-body">
+                    <h2 class="card-title">Ingrediants</h2>
+
+                </div>
+
+            </div>
         </div>
+    </section>
 
 
-</div>
-
-</div>
-
-</div>
-</section>
-
-{% endblock %}
+    {% endblock %}

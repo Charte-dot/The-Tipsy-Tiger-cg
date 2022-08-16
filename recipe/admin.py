@@ -11,7 +11,7 @@ class RecipeAdmin(SummernoteModelAdmin):
     list_filter = (
         'status', 'created_on', 'base', 'author', 'skill')
     list_display = (
-        'title', 'author', 'slug', 'status', 'created_on', 'base', 'skill')
+        'title', 'author', 'slug', 'base', 'skill', 'status', 'created_on')
     search_fields = [
         'title', 'base', 'skill']
     prepopulated_fields = {

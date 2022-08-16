@@ -71,6 +71,7 @@ a:hover {
     display: inline;
 }
 
+/* Nav bar */
 
 #navbarNav
 {
@@ -113,7 +114,7 @@ a.page-link {
 .hero-image {
     width: 100%;
     height: 70vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.403), rgba(0, 0, 0, 0.403)), url(https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660254362/My_project-1_2_50_i0mcfy.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660254362/My_project-1_2_50_i0mcfy.jpg);
     background-size: cover;
 
     margin: 0;
@@ -158,6 +159,18 @@ a.page-link {
 .instructions {
     font-family: Itim, sans-serif;
     font-size: 120%; 
+}
+
+/* footer */
+
+.m-0, .mx-1 {
+    background-color: rgb(255, 255, 255);
+    color:rgb(119, 119, 119);
+}
+
+
+.fab {
+    text-align: center;
 }
 
 /* recipe cards */

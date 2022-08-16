@@ -52,6 +52,7 @@ class Recipe(models.Model):
     BOURBON = 'Bourbon-base'
     GIN = 'Gin-base'
     LIQUEUR = 'Liqueur-base'
+    NONALCOHOLIC = 'Non-Alcoholic'
     RUM = 'Rum-base'
     TEQUILA = 'Tequila-base'
     VODKA = 'Vodka-base'
@@ -61,6 +62,7 @@ class Recipe(models.Model):
         (BOURBON, 'Bourbon-base'),
         (GIN, 'Gin-base'),
         (LIQUEUR, 'Liqueur-base'),
+        (NONALCOHOLIC, 'Non-Alcoholic'),
         (RUM, 'Rum-base'),
         (TEQUILA, 'Tequila-base'),
         (VODKA, 'Vodka-base'),

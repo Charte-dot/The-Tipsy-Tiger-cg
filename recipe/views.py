@@ -25,13 +25,13 @@ class HomePage(generic.ListView):
     paginate_by = 6
     
 
-class RecipeDetail(View):
+class RecipeInfo(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
-        liked = False
+        cheers = False
         if post.cheers.filter(id=self.request.user.id).exists():
             cheers = True
 
@@ -64,5 +64,7 @@ class RecipesList(generic.ListView):
 class MyRecipes(generic.ListView):
     """Displays logged in Users Recipes"""
     model = Recipe
+    queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'my recipes.html'
+    context_object_name = 'recipe'
 
