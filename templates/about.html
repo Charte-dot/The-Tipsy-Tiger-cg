@@ -2,4 +2,34 @@
 {% load static %}
 {% block content %}
 
-{% endblock %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 about-image-container">
+            <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660761173/rinck-content-studio-6YkD2qD86lg-unsplash_1_pzm1in.jpg"
+                alt="three cocktail glasses" class="about-image img-fluid">
+        </div>
+        <div class="col-12 col-md-6 about-text justify-content-center">
+            <h3>About Us</h3>
+            <p class=""> Here at the Tipsy Tiger Cocktail Guide, we strive to bring people together over the love of
+                cocktails.
+                We started as a group of friends that got together every friday to celebrate the end of the working
+                week.
+                So during Covid lockdown as everyone's social activities were put on hold and we stayed all bundled up
+                safe at home,
+                our socialization platform as friends changed but we still continued to celebrate the end of the week.
+                After a Few friday's, lots of cocktail trial and errors and zoom calls, The Tipsy Tiger Cocktail Guide
+                was born.
+            </p>
+            <p>Our mission is to bring this small coummunity of together over our mutual love of cocktails and socializing with friends.
+            <p>So come and Join us <a href="{% url 'account_signup' %}">Register</a> if you haven't yet.</p>
+            <p>By registering you can view out cocktail <a href="{% url 'recipes' %}">Recipes</a> in greater detail.</p>
+            <p>If you have registered with us <a href="{% url 'account_login' %}">Login</a> and post your own favourite cocktails.</p>
+            <p> Once registered You can comment on any recipe letting you know your thoughts.</p>
+            <p>Oh and don't forget to give our recipes a cheer <i class="fas fa-glass-cheers" aria-hidden="true"></i>The Tipsy Tiger version of a like.</p>
+
+        </div>
+
+    </div>
+
+
+    {% endblock %}
