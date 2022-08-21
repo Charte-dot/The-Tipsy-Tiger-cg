@@ -29,6 +29,30 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
+<!-- JavaScript to calculate age from date input to verify age of user-->
+<script type="text/javascript">
+    var minAge = 18;
+
+    function _calcAge() {
+        var date = new Date(document.getElementById("date").value);
+        var today = new Date();
+
+        var timeDiff = Math.abs(today.getTime() - date.getTime());
+        var age1 = Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365;
+        return age1;
+    }
+
+    function _setAge() {
+
+        var age = _calcAge();
+        //alert("my age is " + age);
+        if (age < minAge) {
+            alert('You need to be Over 18 to Enter');
+        } else
+            window.open("home", rel="noreferrer");
+    }
+</script>
+
 <!-- Welcome message to site -->
 
 <body class="screen">
@@ -37,7 +61,8 @@
 
             <div class="text-center col-lg-8 col-md-10 mx-auto">
                 <h1 class="intro1">Welcome to The Tipsy Tiger Cocktail Guide</h1>
-                <h1 class="intro2">Please, verify your age to enter.</h1>
+                <h1 class="intro2">You need to be over 18 to enter.</h1>
+                <h1 class="intro2">Please enter your Date of Birth to verify your age </h1>
             </div>
         </div>
 
@@ -45,8 +70,7 @@
         <form class="date text-center col-lg-8 col-md-10 mx-auto">
             <input type="date" name="date of birth" id="date" />
             <hr>
-            <input type="submit" class="btn-secondary btn-lg text-center" name="submit" id="submit"
-                onclick="_setAge();" />
+            <input type="submit" class="btn-secondary btn-lg text-center" onclick="_setAge();"/>
         </form>
 
         <!-- Login in prompt for registered users-->
@@ -63,32 +87,9 @@
     </div>
     </div>
 
-    <!-- JavaScript to calculate age from date input to verify age of user-->
-    <script type="text/javascript">
-        var minAge = 18;
-
-        function _calcAge() {
-            var date = new Date(document.getElementById("date").value);
-            var today = new Date();
-
-            var timeDiff = Math.abs(today.getTime() - date.getTime());
-            var age1 = Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365;
-            return age1;
-        }
-
-        function _setAge() {
-
-            var age = _calcAge();
-            //alert("my age is " + age);
-            if (age < minAge) {
-                window.open("decline");
-            } else
-            window.open("home");
-
-        }
-    </script>
-
 </body>
-
 </html>
+
+
+
 {% endblock %}

@@ -1,5 +1,80 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 
+<div class="row">
+    <div class="col">
+        <div class="text-center col-lg-8 col-md-10 mx-auto">
+            <div class="col text-center">
+                <h3 class="recipes">Cocktail Recipes</h3>
+            </div>
+            <!--Cocktail Filter-->
+            <form method="GET" class="recipe-filter" role="filter">
+                {{ RecipeFilter.form }}
+                {% csrf_token %}
+                <button class="btn btn-sm btn-secondary" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Recipe columns-->
+<div class="row">
+    <div class="col-12 mt-3 left">
+        <div class="row">
+            {% for recipe in recipe_list %}
+
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for recipe in recipe_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if 'placeholder' in recipe.recipe_image.url %}
+                                    <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660314988/andrea-riezzo-1hKZ0A182Bk-unsplash_a2gicj.jpg"
+                                        alt="orange cocktail in small glass">
+                                    {% else %}
+                                    <img class="card-image" src=" {{ recipe.recipe_image.url }}"
+                                        alt="{{ recipe.title }}">
+                                    {% endif %}
+                                    <div class="card-info">
+                                        <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
+                                    </div>
+                                </div>
+                                <!--insert recipe_detail here when url path created-->
+                                <hr>
+                                <div>
+                                    <p class="card-footer"> added by {{ recipe.author }} on {{ recipe.created_on }}</p>
+                                    <i class="fas fa-glass-cheers"> {{ recipe.number_of_cheers }} </i>
+
+                                    {% with comments.count as total_comments %}
+
+                                    <i class="fas fa-comment"> {{ total_reviews }} </i>
+
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% empty %}
+                    <h3 class="empty">No Cocktail Recipes to View</h3>
+                    {% endfor }
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <a class=" btn btn-lg btn-secondary" href="{% url 'myrecipes' %}">Add you own cocktail</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

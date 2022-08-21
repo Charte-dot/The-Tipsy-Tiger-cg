@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'recipe',
     'crispy_forms',
+    'django_filters',
 
 
 
@@ -61,7 +62,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

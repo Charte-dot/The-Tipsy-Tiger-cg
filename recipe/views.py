@@ -4,18 +4,14 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views.generic import TemplateView
 from .models import Recipe
-
-
-class DeclinePage(generic.TemplateView):
-    """Displays main page for site"""
-    template_name = 'decline.html'
+from .filters import RecipeFilter
 
 
 class MainPage(generic.ListView):
     """Displays home page for site"""
     model = Recipe
     template_name = 'main.html'
-
+    
 
 class HomePage(generic.ListView):
     """Displays home page for site"""
@@ -25,7 +21,7 @@ class HomePage(generic.ListView):
     paginate_by = 6
     
 
-class RecipeInfo(View):
+class RecipeDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
@@ -37,7 +33,7 @@ class RecipeInfo(View):
 
         return render(
             request,
-            "post_detail.html",
+            "recipe_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -58,13 +54,24 @@ class RecipesList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
-    paginate_by = 6
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        filter = RecipeFilter(self.request.GET, queryset)
+        return filter.qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        queryset = self.get_queryset()
+        filter = RecipeFilter(self.request.GET, queryset)
+        context["RecipeFilter"] = filter
+        return context
 
 
 class MyRecipes(generic.ListView):
     """Displays logged in Users Recipes"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
-    template_name = 'my recipes.html'
+    template_name = 'myrecipes.html'
     context_object_name = 'recipe'
 
