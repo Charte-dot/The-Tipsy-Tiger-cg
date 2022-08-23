@@ -40,7 +40,7 @@
                                 <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
                             </div>
                         </div>
-                        <a href="" class=""></a>
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-linkup"></a>
                             <h3 class="recipe-title"> {{ recipe.title }}</h3>
 
                         <hr>

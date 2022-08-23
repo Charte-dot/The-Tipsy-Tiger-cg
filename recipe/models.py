@@ -28,8 +28,8 @@ class Recipe(models.Model):
             MaxValueValidator(4)])
     status = models.IntegerField(choices=STATUS, default=0)
     recipe_image = CloudinaryField('image', default='placeholder')
-    likes = models.ManyToManyField(
-        User, related_name='recipe_like', blank=True)
+    cheers = models.ManyToManyField(
+        User, related_name='recipe_cheers', blank=True)
 
     EASY = 'Quick & Easy'
     MEDIUM = 'A bit Flashy'
@@ -84,9 +84,9 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
-    def number_of_likes(self):
+    def number_of_cheers(self):
         """ Show number of likes on a recipe """
-        return self.likes.count()
+        return self.cheers.count()
 
     def save(self, *args, **kwargs):
         if not self.slug:

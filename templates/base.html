@@ -46,9 +46,12 @@
             </li>
             <li class="nav-item ">
                 <a class="nav-link {% if '/recipes/' in request.path %}active{% endif %}"
-                    href="{% url 'recipes' %}">Recipes</a>
+                    href="{% url 'recipes' %}">Cocktails</a>
             </li>
             {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'myrecipes' %}">My cocktails</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
             </li>
