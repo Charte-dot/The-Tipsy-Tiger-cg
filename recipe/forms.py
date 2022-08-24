@@ -1,2 +1,9 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from .models import Comment
+
+
+class CommentForm(forms.ModelForm):
+    """comment form for logged in users"""
+    class Meta:
+        model = Comment
+        fields = ('body',)
