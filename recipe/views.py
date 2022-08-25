@@ -22,8 +22,8 @@ class HomePage(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')[0:3]
     template_name = 'index.html'
     paginate_by = 6 
-    
-    
+
+
 class About(generic.TemplateView):
     """Displays information about the site"""
     template_name = 'about.html'
@@ -48,48 +48,45 @@ class RecipeDetail(LoginRequiredMixin, View):
                 "comments": comments,
                 "commented": False,
                 "cheers": cheers,
-                "commentform": CommentForm()
+                "comment_form": CommentForm()
             }
         ) 
-        
-        def post(self, request, slug, *args, **kwargs):
-            """shows full recipe with approved comments
-            show if logged in user has given a cheers
-            User can submit recipe for review to admin"""
-            
-            queryset = Recipe.objects.filter(status=1)
-            recipe = get_object_or_404(queryset, slug=slug)
-            comment = recipe.comments.filter(approved=True).order_by('created_on')
-            cheers = False
-            if recipe.cheers.filter(id=self.request.user.id).exists():
-                cheers = True
-                
-            comment_form = CommentForm(data=request.Post)
-            if comment_form.is_valid():
-                comment_form.instance.email = request.user.email
-                comment_form.instance.name = request.user.username
-                comment = comment_form.save(commit=False)
-                comment.recipe = recipe
-                comment.save()
-                messages.success(request, ' Thanks for your comment on this cocktail')
-            else:
-                comment_form = CommentForm()
-                
-            return render(
-                request,
-                'recipe_detail.html',
-                {
-                    "recipe": recipe,
-                    "comment": comment,
-                    "commented": True,
-                    "cheers": cheers,
-                    "commentform": CommentForm()
-                    
-                },
-                
+
+    def post(self, request, slug, *args, **kwargs):
+        """shows full recipe with approved comments
+        show if logged in user has given a cheers
+        User can submit recipe for review to admin"""
+    
+        queryset = Recipe.objects.filter(status=1)
+        recipe = get_object_or_404(queryset, slug=slug)
+        comment = recipe.comments.filter(approved=True).order_by('created_on')
+        cheers = False
+        if recipe.cheers.filter(id=self.request.user.id).exists():
+            cheers = True
+
+        comment_form = CommentForm(data=request.Post)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.recipe = recipe
+            comment.save()
+            messages.success(request, 'Thanks for your thoughts')
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            'recipe_detail.html',
+            {
+                "recipe": recipe,
+                "comment": comment,
+                "commented": True,
+                "cheers": cheers,
+                "comment_form": CommentForm()
+
+            },
             )
-
-
 
 
 class RecipesList(generic.ListView):

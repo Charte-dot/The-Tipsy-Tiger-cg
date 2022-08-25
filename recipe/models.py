@@ -82,7 +82,7 @@ class Recipe(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
     def number_of_cheers(self):
         """ Show number of likes on a recipe """
@@ -105,11 +105,10 @@ class Comment(models.Model):
     body = models.TextField(blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    
+
     class Meta:
         """ Comments ordered from last to first """
         ordering = ['created_on']
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-    
