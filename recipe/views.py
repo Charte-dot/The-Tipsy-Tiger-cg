@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from django.template.defaultfilters import slugify
 from django.views.generic import TemplateView
 from .models import Recipe
 from .filters import RecipeFilter
@@ -109,7 +111,7 @@ class RecipesList(generic.ListView):
         return context
 
 
-class MyRecipes(generic.ListView):
+class MyRecipes(LoginRequiredMixin, generic.ListView):
     """Displays logged in Users Recipes"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
@@ -131,3 +133,22 @@ class RecipeCheers(LoginRequiredMixin, View):
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))     
 
+
+class RecipeCreate(
+                    SuccessMessageMixin, LoginRequiredMixin, 
+                    generic.CreateView):
+    """Logged in user can create a recipe and add it to their cocktail list"""
+
+    model = Recipe
+    fields = ['recipe_image', 'title', 'about', 'skill', 'base', 'serves', 
+              'ingredients', 'steps', 'notes', ]
+    template_name = 'recipe_form.html'
+    success_url = reverse_lazy('myrecipes')
+    success_message = "You have added a new cocktail to your list!"
+
+    def form_valid(self, form):
+        """Places logged in users as author and sets form to publish"""
+        form.instance.author = self.request.user
+        form.instance.status = 1
+
+        return super(RecipeCreate, self).form_valid(form)

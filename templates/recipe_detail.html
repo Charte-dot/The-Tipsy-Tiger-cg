@@ -3,113 +3,155 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+<!--Cocktail Title-->
+<div class="row">
+    <div class="text-center recipe-title">
+        <h1>{{ recipe.title }}</h1>
+    </div>
+</div>
+
 <div class="container">
     <section>
-        <!--Recipe title-->
         <div class="row">
-            <div class=" col recipe-title">
-                <h1>{{ recipe.title }}</h1>
-            </div>
-        </div>
-
-        <!--Image for recipe-->
-        <div class="row">
-            <div class="col-sm-6 image-container card recipe-detail-image">
+            <!--recipe image-->
+            <div class="col-sm-6 col-md-auto card border-light">
                 {% if "placeholder" in recipe.recipe_image.url %}
-                <img class="card-image-top"
+                <img class="card-image"
                     src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660314988/andrea-riezzo-1hKZ0A182Bk-unsplash_a2gicj.jpg"
                     alt="orange cocktail in small glass">
                 {% else %}
                 <img src="{{ recipe.recipe_image.url }}" alt="{{ recipe.title }}">
 
                 {% endif %}
+                <p class="recipe-image-banner info">Recipe added by {{ user.username }} on: {{ recipe.created_on }}</p>
+                <p class="info">Recipe last updated on: {{ recipe.updated_on}}</p>
+            </div>
 
-                <p class="recipe-image info"> Recipe added by {{ user.username}} submitted on: {{ recipe.created_on }}
+            <!--Coctail info & icons-->
+
+            <div class="col-sm-6 card recipe-detail border-light ">
+                <h2 class="card-title"> About this cocktail</h2>
+                <p class="recipe-intro card-text"> {{ recipe.about |safe }}</p>
+
                 </p>
-            </div>
+                <div class="card-text">
+                    <ul class="icon=list fa-ul">
+                        <li>
 
-            <div class="row">
-                <div class="col-12 card">
-                    <div class="card-body">
-                        <h2 class="card-title"> About this cocktail</h2>
-                        <p class="recipe-info card-text">
-                            {{ recipe.about |safe }}
-                        </p>
-                        <p class="info"> Recipe last updated on: {{ recipe.updated_on }}</p>
-                    </div>
-                </div>
-            </div>
+                        </li>
+                        <li>
+                            {% if user.is_authenticated %}
+                            <form class="d-line" action="{% url 'recipe_cheers' recipe.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
 
-            <!--recipe icons-->
-            <div class="col-sm-6 card recipe">
-                <div class="row">
+                                <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                    <i class="fas fa-glass-cheers"></i></button>
+                                {% else %}
 
-                    <!--recipe cheers(likes)-->
-                    <div class="col card-body liked-icon">
-                        {% if user.is_authenticated %}
-                        <form class="d-line" action="{% url 'recipe_cheers' recipe.slug %}" method="POST">
-                            {% csrf_token %}
-                            {% if liked %}
+                                <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                    <i class="fas fa-glass-cheers"></i></button>
 
-                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}">
-                                <i class="fas fa-glass-cheers"></i></button>
+                                {% endif %}
+                            </form>
                             {% else %}
-
-                            <button class="btn-cheers" type="submit" name="recipe_id" value="{{recipe.slug}}">
-                                <i class="fas fa-glass-cheers"></i></button>
-
+                            <i class="fas fa-glass-cheers" aria-hidden="true"></i>
                             {% endif %}
-                        </form>
+                            <P>{{ recipe.number_of_cheers }} Cheer</p>
+                        </li>
 
-                        % else %
-                        <i class="fas fa-glass-cheers" aria-hidden="true"></i>
-                        {% endif %}
-                        <p>{{ recipe.number_of_cheers }} Cheers</p>
-                    </div>
+                        <li>
+                            {% with comments.count as total_comments %}
+                            <i class="fas fa-comment"></i>
+                            <p>{{ total_reviews }} Comments</p>
+                            {% endwith %}
+                        </li>
+                        <li>
+                            <i class="fas fa-glass-whiskey"> Serves</i>
+                            <p>{{ recipe.servings }}</p>
+                        </li>
+                        <!--Skill level-->
+                        <li>
+                            <i class="fas fa-layer-group"> Skill level</i>
+                            <p>{{ recipe.skill }}</p>
+                        </li>
+                        <!--Recipe alcohol base-->
+                        <li>
+                            <i class="fas fa-wine-bottle"> Alcohol Base</i>
+                            <p>{{ recipe.base }}</p>
+                        </li>
+
+                    </ul>
                 </div>
-
-                <!--Comment count-->
-                <div class="col-1">
-                    {% with comments.count as total_comments %}
-                    <i class="fas fa-comment"></i>
-                    <p>{{ total_reviews }} Comments</p>
-                    {% endwith %}
-
-                    <!--Recipe card icons-->
-                    <div class="card-icons">
-                        <ul>
-                            <!--No of servings-->
-                            <li>
-                                <i class="fas fa-glass-whiskey-rocks"></i>
-                                <p>{{ recipe.servings }} serves</p>
-                            </li>
-                            <!--Skill level-->
-                            <li>
-                                <i class="fa-solid fa-layer-group"></i>
-                                <p>{{ recipe.skill }} Skill level</p>
-                            </li>
-                            <!--Recipe alcohol base-->
-                            <li>
-                                <i class="fa-solid fa-wine-bottle"></i>
-                                <p>{{ recipe.base }}</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <section>
-        <div class="row">
-            <div class="col-12 md-6 card-ingrediants">
-                <div class="card-body">
-                    <h2 class="card-title">Ingrediants</h2>
-
-                </div>
-
             </div>
         </div>
-    </section>
+
+</div>
+</section>
 
 
-    {% endblock %}
+
+<section>
+    <!--Cocktail ingredients-->
+    <div class="row ">
+        <div class="col-11 card border-light recipe-detail">
+            <div class="card-body">
+                <h2 class="card-title"> Ingredients</h2>
+                <p class="card-text">{{recipe.ingredients|safe|linebreaks}}</p>
+            </div>
+            <!--steps-->
+
+            <h2 class="card-title">Steps</h2>
+            <p class="card-text">{{recipe.steps|safe|linebreaks}}</p>
+        </div>
+
+    </div>
+</section>
+
+<!--Comments-->
+<div class="row">
+    <div class="col-11 card border-light comments">
+        <h2 class="comment-title"> Comments:</h2>
+        <div class="card-text">
+            {% for comment in comments %}
+            <div class="comment">
+                <p class="card-text info"> <span>{{ comment.created_on }}</span>
+                    <span>{{ comment.name }} Wrote:</span>
+                </p>
+                {{ comment.body | linebreaks}}
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-11 card border-light mt-3">
+        <div class="card-body">
+            {% if commented %}
+            <div class="alert alert-sucess" role="alert">
+                Your comment is pending admin approval!
+            </div>
+            {% else %}
+            {% if user.is_authenticated%}
+            <h2 class="card-title">Leave a review:</h2>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="post">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-lg btn-secondary">Submit</button>
+                    </form>
+                    {% endif %}
+                    {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

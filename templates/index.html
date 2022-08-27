@@ -13,8 +13,9 @@
     <hr>
     <div class="row">
         <div class="col-12">
-            <h2 class="popular"><strong> Most popular cocktails<i class="fas fa-cocktail"></i></strong></h2>
-        </div>
+            <h2 class="popular"><strong> Most popular cocktails<i class="fas fa-cocktail"></i></strong> <br>
+                Head to <a class="recipe-link" href="{% url 'recipes' %}"> Cocktails</a> view more delicious recipes.</h2>
+            
 
     </div>
 
@@ -26,7 +27,7 @@
                 <div class="row">
                     {% for recipe in recipe_list %}
                     <div class="col-md-4">
-                        <div class="card mb-4">
+                        <div class="card mb-4 card border-warning ">
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if 'placeholder' in recipe.recipe_image.url %}
@@ -40,8 +41,11 @@
                                         <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
                                     </div>
                                 </div>
-                                <h3 class="recipe-title"> {{ recipe.title }}</h3>
+                                
+                                <h3 class="recipe-title">{{ recipe.title }}</h3>
                                 <p class="card-footer"> added by {{ recipe.author }} on {{ recipe.created_on }}</p>
+                                
+                                </div>
                             </div>
                         </div>
                     </div>

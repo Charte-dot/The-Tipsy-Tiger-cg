@@ -7,19 +7,26 @@
     <div class="row">
         <div class="col text-center recipes">
             <h1>Cocktail Recipes</h1>
-            <h4> Filter the Recipes by Skill and Alcohol base.</h4>
+            
         </div>
     </div>
     <!--Cocktail recipe filter-->
     <div class="row text-center">
         <form method="GET" class="recipe-filter" role="filter">
+            <p>Filter by</p>
             {{ RecipeFilter.form }}
             {% csrf_token %}
             <button class="btn btn-sm btn-secondary" type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
 </div>
+<div class="row text-center like-intro">
+    <h5>Why don't you give your favourite cocktails a cheers <i class="fas fa-glass-cheers"></i> The Tipsy Tiger version of a like.</h5>
+    <h5>Or leave us a <i class="fas fa-comment"></i> comment let us know your thoughts.</h5>
 
+
+
+</div>
 <!--Recipe columns-->
 <div class="row">
     <div class="col-12 mt-3 left">
@@ -40,8 +47,8 @@
                                 <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
                             </div>
                         </div>
-                        <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-linkup"></a>
-                            <h3 class="recipe-title"> {{ recipe.title }}</h3>
+                        <a class="recipe-title" href="{% url 'recipe_detail' recipe.slug %}" class="recipe-linkup">
+                            <h3 class="recipe-title"> {{ recipe.title }}</h3></a>
 
                         <hr>
                         <div>
@@ -74,7 +81,7 @@
 </div>
 <div class="row col-lg-2 col-md-3 mx-auto">
     <!-- <div class="col text-center"> -->
-        <a class="btn btn-lg btn-secondary" href="{% url 'myrecipes' %}">Add A Cocktail</a>
+        <a class="btn btn-lg btn-secondary" href="{% url 'recipecreate' %}">Add A Cocktail</a>
     </div>
 </div>
 
