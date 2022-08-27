@@ -292,3 +292,13 @@ color: rgb(68, 66, 66);
     margin-bottom: 3%;
 }
 
+/* Edit form */
+.back {
+    margin-top: 5%;
+}
+
+.cocktail-form {
+    width: 75%;
+    margin: auto;
+}
+

@@ -29,8 +29,8 @@
                 <tr>
                     <td>{{ recipe.title }}</td>
                     <td><a href="{% url 'recipe_detail' recipe.slug %}">View cocktail</a></td>
-                    <td><a href="">Edit Cocktail</a></td>
-                    <td><a href="">Delete Cocktail</a></td>
+                    <td><a href="{% url 'recipeedit' recipe.slug %}">Edit Cocktail</a></td>
+                    <td><a href="{% url 'recipedelete' recipe.slug %}">Delete Cocktail</a></td>
                 </tr>
                 {% empty %}
                 <h3> You haven't added any cocktails yet!</h3>

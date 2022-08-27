@@ -16,7 +16,7 @@ class MainPage(generic.ListView):
     """Displays home page for site"""
     model = Recipe
     template_name = 'main.html' 
-    
+
 
 class HomePage(generic.ListView):
     """Displays home page for site"""
@@ -58,7 +58,7 @@ class RecipeDetail(LoginRequiredMixin, View):
         """shows full recipe with approved comments
         show if logged in user has given a cheers
         User can submit recipe for review to admin"""
-    
+
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comment = recipe.comments.filter(approved=True).order_by('created_on')
@@ -96,7 +96,7 @@ class RecipesList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
-    
+
     """filter cocktial by skill level and alcohol base"""
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -131,7 +131,7 @@ class RecipeCheers(LoginRequiredMixin, View):
             recipe.cheers.add(request.user)
             messages.success(request, 'You gave this cocktail a cheers!')
 
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))     
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))    
 
 
 class RecipeCreate(
@@ -152,5 +152,24 @@ class RecipeCreate(
         form.instance.status = 1
 
         return super(RecipeCreate, self).form_valid(form)
-    
-    
+
+
+class RecipeEdit(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
+    """ Logged in User can edit the cocktail recipe"""
+    model = Recipe
+    fields = ['recipe_image', 'title', 'about', 'skill', 'base', 'serves', 
+              'ingredients', 'steps', 'notes', ]
+    template_name = 'recipe_form.html'
+    success_url = reverse_lazy('myrecipes')
+    success_message = "You have Edited your cocktail!"
+
+class RecipeDelete(SuccessMessageMixin, LoginRequiredMixin,
+                   generic.DeleteView):
+    """ Logged in user can delete the cocktail recipe"""
+    model = Recipe
+    success_url = reverse_lazy('myrecipes')
+    success_message = "You have Edited your cocktail!"
+
+    def delete(self, request, *args, **kwargs):
+        messages.warning(self.request, self.success_message)
+        return super(RecipeDelete, self).delete(request, *args, **kwargs)
