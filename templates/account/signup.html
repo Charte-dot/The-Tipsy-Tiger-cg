@@ -11,7 +11,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign Up" %}</h3>
 
-            <p>{% blocktrans %} Already have an account? Then please <a href="{{ signup_url }}">sign up</a>{% endblocktrans %}</p>
+            <p>{% blocktrans %} Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
         </div>
     </div>
     <div class="row">
@@ -23,8 +23,8 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button type="submit" class="btn btn-lg btn-success">{% trans "Sign Up" %}</button>
-                <a href="{% url 'home' %}" class="btn btn-lg btn-success">Home</a>
+                <button type="submit" class="btn btn-secondary">{% trans "Sign Up" %}</button>
+                <a href="{% url 'home' %}" class="btn  btn-secondary">Home</a>
             </form>
         </div>
     </div>

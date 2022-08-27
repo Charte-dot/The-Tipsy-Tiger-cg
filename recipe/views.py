@@ -66,7 +66,7 @@ class RecipeDetail(LoginRequiredMixin, View):
         if recipe.cheers.filter(id=self.request.user.id).exists():
             cheers = True
 
-        comment_form = CommentForm(data=request.Post)
+        comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -152,3 +152,5 @@ class RecipeCreate(
         form.instance.status = 1
 
         return super(RecipeCreate, self).form_valid(form)
+    
+    
