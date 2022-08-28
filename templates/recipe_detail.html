@@ -14,7 +14,7 @@
     <section>
         <div class="row">
             <!--recipe image-->
-            <div class="col-sm-6 col-md-auto card border-light">
+            <div class="col-sm-6 col-md-auto card box-shadow">
                 {% if "placeholder" in recipe.recipe_image.url %}
                 <img class="card-image"
                     src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660314988/andrea-riezzo-1hKZ0A182Bk-unsplash_a2gicj.jpg"
@@ -24,12 +24,12 @@
 
                 {% endif %}
                 <p class="recipe-image-banner info">Recipe added by {{ user.username }} on: {{ recipe.created_on }}</p>
-                <p class="info">Recipe last updated on: {{ recipe.updated_on}}</p>
+                <p class="info">Recipe last updated on: {{ recipe.update_on}}</p>
             </div>
 
             <!--Coctail info & icons-->
 
-            <div class="col-sm-6 card recipe-detail border-light ">
+            <div class="col-sm-6 card recipe-detail border-light">
                 <h2 class="card-title"> About this cocktail</h2>
                 <p class="recipe-intro card-text"> {{ recipe.about |safe }}</p>
 
@@ -68,7 +68,7 @@
                         </li>
                         <li>
                             <i class="fas fa-glass-whiskey"> Serves</i>
-                            <p>{{ recipe.servings }}</p>
+                            <p>{{ recipe.serves }}</p>
                         </li>
                         <!--Skill level-->
                         <li>
@@ -95,7 +95,7 @@
     <!--Cocktail ingredients-->
     <div class="row ">
         <div class="col-11 card border-light recipe-detail">
-            <div class="card-body">
+            <div class="card-main">
                 <h2 class="card-title"> Ingredients</h2>
                 <p class="card-text">{{recipe.ingredients|safe|linebreaks}}</p>
             </div>

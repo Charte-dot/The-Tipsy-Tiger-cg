@@ -75,8 +75,6 @@ class Recipe(models.Model):
         default=BOURBON
         )
 
-    notes = models.TextField(blank=True, max_length=200)
-
     class Meta:
         """ Recipes ordered to show newest first """
         ordering = ['-created_on']

@@ -16,84 +16,59 @@
             <h2 class="popular"><strong> Most popular cocktails<i class="fas fa-cocktail"></i></strong> <br>
                 Head to <a class="recipe-link" href="{% url 'recipes' %}"> Cocktails</a> view more delicious recipes.
             </h2>
-
-
-        </div>
-
-        <div class="container-fluid">
-            <div class="row">
-
-                <!-- Recipe Entries Column -->
-                <div class="col-12 mt-3 left">
-                    <div class="row">
-                        {% for recipe in recipe_list %}
-                        <div class="col-md-4">
-                            <div class="card mb-4 card border-warning ">
-                                <div class="card-body">
-                                    <div class="image-container">
-                                        {% if 'placeholder' in recipe.recipe_image.url %}
-                                        <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660314988/andrea-riezzo-1hKZ0A182Bk-unsplash_a2gicj.jpg"
-                                            alt="orange cocktail in small glass">
-                                        {% else %}
-                                        <img class="card-image" src=" {{ recipe.recipe_image.url }}"
-                                            alt="{{ recipe.title }}">
-                                        {% endif %}
-                                        <div class="card-info">
-                                            <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
-                                        </div>
-                                    </div>
-                                    <a class="recipe-title" href="{% url 'recipe_detail' recipe.slug %}">
-                                        <h3 class="recipe-title">{{ recipe.title }} </h3>
-                                    </a>
-                                    <p class="card-footer"> added by {{ recipe.author }} on {{ recipe.created_on }}</p>
-                                    {% if user.is_authenticated %}
-                                    <form class="d-line" action="{% url 'recipe_cheers' recipe.slug %}" method="POST">
-                                        {% csrf_token %}
-                                        {% if liked %}
-
-                                        <button class="btn-cheers" type="submit" name="recipe_id"
-                                            value="{{recipe.slug}}">
-                                            <i class="fas fa-glass-cheers"></i></button>
-                                        {% else %}
-
-                                        <button class="btn-cheers" type="submit" name="recipe_id"
-                                            value="{{recipe.slug}}">
-                                            <i class="fas fa-glass-cheers"></i></button>
-
-                                        {% endif %}
-                                    </form>
-                                    {% else %}
-                                    <i class="fas fa-glass-cheers" aria-hidden="true"></i>
-                                    {% endif %}
-                                    <P>{{ recipe.number_of_cheers }} Cheer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                </div>
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="container-fluid join-us">
-        <div class="row col-lg-8 col-md-10 mx-auto">
-            <h1>Join Us!</h1>
-            <p class="heading">You can't buy happiness, but you can prepare a cocktail...</p>
-            <p class="heading">Choose from our range of tried, tested & loved cocktails</p>
-            <p class="heading">Even add you own personal favourites</p>
-            {% if user.is_authenticated %}
-            <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
-            {% else %}
-            <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
-            {% endif %}
         </div>
     </div>
 </div>
+<!-- Recipe Entries Column -->
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for recipe in recipe_list %}
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    {% if 'placeholder' in recipe.recipe_image.url %}
+                    <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1661630055/placeholder_d8nt9j.png/150x100"
+                        alt="orange cocktail in small glass">
+                    {% else %}
+                    <img class="card-image" src=" {{ recipe.recipe_image.url }}" alt="{{ recipe.title }}/150x100">
+                    {% endif %}
+                    <div class="card-body">
+                        <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
+                        <h3 class="recipe-title">{{ recipe.title }} </h3>
+                        <p class="card-text">added by {{ recipe.author }} on {{ recipe.created_on }}</p>
+                        
+                    </div>
 
-{% endblock %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% if forloop.counter|divisibleby:3 %}
+</div>
+<div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+<div class="container-fluid join-us">
+    <div class="row col-lg-8 col-md-10 mx-auto">
+        <h1>Join Us!</h1>
+        <p class="heading">You can't buy happiness, but you can prepare a cocktail...</p>
+        <p class="heading">Choose from our range of tried, tested & loved cocktails</p>
+        <p class="heading">Even add you own personal favourites</p>
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
+        {% else %}
+        <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
+        {% endif %}
+    </div>
+
+
+
+    {% endblock %}

@@ -5,8 +5,6 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.template.defaultfilters import slugify
-from django.views.generic import TemplateView
 from .models import Recipe
 from .filters import RecipeFilter
 from .forms import CommentForm
@@ -15,7 +13,7 @@ from .forms import CommentForm
 class MainPage(generic.ListView):
     """Displays home page for site"""
     model = Recipe
-    template_name = 'main.html' 
+    template_name = 'main.html'
 
 
 class HomePage(generic.ListView):
@@ -23,7 +21,6 @@ class HomePage(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')[0:3]
     template_name = 'index.html'
-    paginate_by = 6 
 
 
 class About(generic.TemplateView):
@@ -131,17 +128,17 @@ class RecipeCheers(LoginRequiredMixin, View):
             recipe.cheers.add(request.user)
             messages.success(request, 'You gave this cocktail a cheers!')
 
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))    
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))  
 
 
 class RecipeCreate(
-                    SuccessMessageMixin, LoginRequiredMixin, 
+                    SuccessMessageMixin, LoginRequiredMixin,
                     generic.CreateView):
     """Logged in user can create a recipe and add it to their cocktail list"""
 
     model = Recipe
-    fields = ['recipe_image', 'title', 'about', 'skill', 'base', 'serves', 
-              'ingredients', 'steps', 'notes', ]
+    fields = ['recipe_image', 'title', 'about', 'skill', 'base', 'serves',
+              'ingredients', 'steps' ]
     template_name = 'recipe_form.html'
     success_url = reverse_lazy('myrecipes')
     success_message = "You have added a new cocktail to your list!"
@@ -157,18 +154,21 @@ class RecipeCreate(
 class RecipeEdit(SuccessMessageMixin, LoginRequiredMixin, generic.UpdateView):
     """ Logged in User can edit the cocktail recipe"""
     model = Recipe
-    fields = ['recipe_image', 'title', 'about', 'skill', 'base', 'serves', 
-              'ingredients', 'steps', 'notes', ]
+    fields = ['recipe_image', 'title', 'skill', 'base', 'serves', 'about',
+              'ingredients', 'steps', ]
     template_name = 'recipe_form.html'
     success_url = reverse_lazy('myrecipes')
     success_message = "You have Edited your cocktail!"
 
+
 class RecipeDelete(SuccessMessageMixin, LoginRequiredMixin,
                    generic.DeleteView):
-    """ Logged in user can delete the cocktail recipe"""
+    """
+    Logged in user can delete a recipe from their my recipes list
+    """
     model = Recipe
     success_url = reverse_lazy('myrecipes')
-    success_message = "You have Edited your cocktail!"
+    success_message = "Cocktail deleted!"
 
     def delete(self, request, *args, **kwargs):
         messages.warning(self.request, self.success_message)
