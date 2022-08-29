@@ -18,42 +18,44 @@
             </h2>
         </div>
     </div>
-</div>
-<!-- Recipe Entries Column -->
-<div class="album py-5 bg-light">
-    <div class="container">
+
+    <!-- Recipe Entries Column -->
+    <div class="album py-5 bg-light">
         <div class="row">
-            {% for recipe in recipe_list %}
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                    {% if 'placeholder' in recipe.recipe_image.url %}
-                    <img src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1661630412/yh7v8u7ajreg2fn3xcmu.png"
-                        alt="orange cocktail in small glass">
-                    {% else %}
-                    <img class="card-image" src=" {{ recipe.recipe_image.url }}" alt="{{ recipe.title }}/150x100">
-                    {% endif %}
-                    <div class="card-body">
-                        <p class="recipe-info"> {{ recipe.skill }} / {{ recipe.base }}</p>
-                        <h3 class="recipe-title">{{ recipe.title }} </h3>
-                        <p class="card-text">added by {{ recipe.author }} on {{ recipe.created_on }}</p>
-                        
+            <!-- Recipe Snapshot Column -->
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for recipe in recipe_list %}
+                    <div class="col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    {% if 'placeholder' in recipe.recipe_image.url %}
+                                    <img class="card-img-top"
+                                        src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1661630412/yh7v8u7ajreg2fn3xcmu.png"
+                                        alt="orange cocktail in small glass">
+                                    {% else %}
+                                    <img class="card-img-top" src=" {{ recipe.recipe_image.url }} "
+                                        alt="{{ recipe.title }}">
+                                    {% endif %}
+                                    <div>
+                                        <p class="recipe-type text-center"> {{ recipe.skill }} / {{ recipe.base}}</p>
+                                        <h3 class="recipe-title home-cd"> {{ recipe.title }}</h3>
+                                        <p class="recipe-footer card-footer">added by {{ recipe.author }} on
+                                            {{ recipe.created_on}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
+                    {% if forloop.counter|divisibleby:3 %}
+                    <!-- </div> -->
+                    <div class="row">
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
-
             </div>
-
-        </div>
-
-    </div>
-
-    {% if forloop.counter|divisibleby:3 %}
-</div>
-<div class="row">
-    {% endif %}
-    {% endfor %}
-</div>
 
 
 <div class="container-fluid join-us">
