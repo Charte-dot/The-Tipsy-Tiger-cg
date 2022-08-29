@@ -6,54 +6,49 @@
     margin-top: 3%;
 }
 
-.prelogin {
-    margin-top: 5%;
-    color: white;
-}
 
-.prelogin:hover {
-    color: rgb(255, 119, 0);
-}
-
-#date{
-    margin-top: 5%;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    color: white;
+.intro{
+    margin-top: 30%;
     font-family: Special Elite, sans-serif;
+    color: rgb(255, 255, 255);
+    position: center;
     font-size: 250%;
-    text-transform: uppercase;
 }
-    
 
-.intro1 {
-    margin-top: 20%;
+.intro2{
+    margin-top: 5%;
     font-family: Special Elite, sans-serif;
     color: rgb(255, 255, 255);
     position: center;
-    font-size: 300%;
+    font-size: 200%;
 }
-
-.intro2 {
-    margin-top: 3%;
-    font-family: Special Elite, sans-serif;
-    color: rgb(255, 255, 255);
-    position: center;
-    font-size: 150%;
-}
-
-.decline {
-    color: rgb(12, 12, 12);
-    text-decoration: none;
-}
-
 
 .btn-secondary, #return{
     color: azure;
     background-color: rgb(255, 119, 0);
     text-decoration: none;
-    display: inline;
+    display: inline-block;
+}
     
+
+
+.yes {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.93);  
+}
+
+.no {
+    text-decoration: none;
+    color: rgba(6, 6, 6, 0.93);  
+}
+
+.yes:hover{
+    color: rgba(255, 255, 255, 0.93); 
+    
+}
+
+.no:hover {
+    color:  rgba(6, 6, 6, 0.93);   
 }
 
 /* Nav bar */
@@ -177,7 +172,7 @@ margin-bottom: 1%;
 
 /* Icons */
 i {
-color: rgb(68, 66, 66);
+color: rgb(84, 84, 84);
 }
 
 

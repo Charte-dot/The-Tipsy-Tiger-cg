@@ -14,6 +14,11 @@ class MainPage(generic.ListView):
     """Displays home page for site"""
     model = Recipe
     template_name = 'main.html'
+    
+
+class DeclinePage(generic.TemplateView):
+    """Displays main page for site"""
+    template_name = 'decline.html'     
 
 
 class HomePage(generic.ListView):
@@ -21,6 +26,7 @@ class HomePage(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')[0:3]
     template_name = 'index.html'
+    paginate_by = 4
 
 
 class About(generic.TemplateView):
@@ -94,8 +100,9 @@ class RecipesList(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
 
-    """filter cocktial by skill level and alcohol base"""
+    
     def get_queryset(self):
+        """filter cocktial by skill level and alcohol base"""
         queryset = super().get_queryset()
         filter = RecipeFilter(self.request.GET, queryset)
         return filter.qs
@@ -114,6 +121,12 @@ class MyRecipes(LoginRequiredMixin, generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'myrecipes.html'
     context_object_name = 'recipe'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['recipe'] = context['recipe'].filter(author=self.request.user)
+        
+        return context
 
 
 class RecipeCheers(LoginRequiredMixin, View):

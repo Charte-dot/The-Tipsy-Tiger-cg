@@ -30,12 +30,14 @@ class Recipe(models.Model):
     recipe_image = CloudinaryField('image', default='placeholder')
     cheers = models.ManyToManyField(
         User, related_name='recipe_cheers', blank=True)
-
+    
+    OPTIONS = "Options..."
     EASY = 'Quick & Easy'
     MEDIUM = 'A bit Flashy'
     HARD = 'Challenge me'
 
     SKILL_LEVEL = [
+        (OPTIONS, 'Options...'),
         (EASY, 'Quick & Easy'),
         (MEDIUM, 'A bit Flashy'),
         (HARD, 'Challenge Me')
@@ -45,9 +47,9 @@ class Recipe(models.Model):
         max_length=15,
         choices=SKILL_LEVEL,
         blank=False,
-        default=EASY
+        default=OPTIONS
         )
-
+    OPTIONS = "Options..."
     BOURBON = 'Bourbon-base'
     GIN = 'Gin-base'
     LIQUEUR = 'Liqueur-base'
@@ -58,6 +60,7 @@ class Recipe(models.Model):
     WHISKEY = 'Whiskey-base'
 
     ALCOHOL_BASE_CHOICES = [
+        (OPTIONS, 'Options...'),
         (BOURBON, 'Bourbon-base'),
         (GIN, 'Gin-base'),
         (LIQUEUR, 'Liqueur-base'),
@@ -72,7 +75,7 @@ class Recipe(models.Model):
         max_length=15,
         choices=ALCOHOL_BASE_CHOICES,
         blank=False,
-        default=BOURBON
+        default=OPTIONS
         )
 
     class Meta:
