@@ -33,8 +33,8 @@
         <div class="row">
             {% for recipe in recipe_list %}
 
-            <div class="col-md-4">
-                <div class="card md-6 card border-warning mb-3" style="max-width: 18rem;">
+            <div class="col-lg-4">
+                <div class="card mb-4">
                     <div class="card-body">
                         <div class="image-container">
                             {% if 'placeholder' in recipe.recipe_image.url %}
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <a class="recipe-title" href="{% url 'recipe_detail' recipe.slug %}" class="recipe-linkup">
-                            <h3 class="recipe-title"> {{ recipe.title }}</h3></a>
+                            <h3 class="recipe-title select"> {{ recipe.title }}</h3></a>
 
                         <hr>
                         <div>

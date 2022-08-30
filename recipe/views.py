@@ -40,7 +40,7 @@ class RecipeDetail(LoginRequiredMixin, View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
-        comments = recipe.comments.filter(approved=True).order_by('created_on')
+        comment = recipe.comments.filter(approved=True).order_by('created_on')
         cheers = False
         if recipe.cheers.filter(id=self.request.user.id).exists():
             cheers = True
@@ -50,7 +50,7 @@ class RecipeDetail(LoginRequiredMixin, View):
             "recipe_detail.html",
             {
                 "recipe": recipe,
-                "comments": comments,
+                "comment": comment,
                 "commented": False,
                 "cheers": cheers,
                 "comment_form": CommentForm()
@@ -100,7 +100,7 @@ class RecipesList(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
 
-    
+
     def get_queryset(self):
         """filter cocktial by skill level and alcohol base"""
         queryset = super().get_queryset()

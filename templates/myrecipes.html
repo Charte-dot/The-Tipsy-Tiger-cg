@@ -10,11 +10,6 @@
             {% endif %}
         </div>
     </div>
-    <div class="row">
-        <div class="col text-center add">
-            <a class="btn btn-lg btn-secondary " href="{% url 'recipecreate' %}">Add your cocktail</a>
-        </div>
-    </div>
 
     <div class="row justify-content-center">
         <div class="col-xs-12 col-md-9 col-md-offset-2">
@@ -28,9 +23,16 @@
                 {% for recipe in recipe %}
                 <tr>
                     <td>{{ recipe.title }}</td>
-                    <td><a href="{% url 'recipe_detail' recipe.slug %}">View cocktail</a></td>
-                    <td><a href="{% url 'recipeedit' recipe.slug %}">Edit Cocktail</a></td>
-                    <td><a href="{% url 'recipedelete' recipe.slug %}">Delete Cocktail</a></td>
+
+                    <td><button type="button" class="btn btn-sm btn-success"><a class="warning"
+                                href="{% url 'recipe_detail' recipe.slug %}">
+                                View cocktail</a></button></td>
+                    <td><button type="button" class="btn btn-sm btn-warning"><a class="warning"
+                                href="{% url 'recipeedit' recipe.slug %}">
+                                Edit Cocktail</a></button></td>
+                    <td><button type="button" class="btn btn-sm btn-danger"><a class="delete"
+                                href="{% url 'recipedelete' recipe.slug %}">
+                                Delete Cocktail</a></button></td>
                 </tr>
                 {% empty %}
                 <h3> You haven't added any cocktails yet!</h3>
@@ -39,6 +41,12 @@
 
         </div>
 
+    </div>
+
+    <div class="row">
+        <div class="col text-center add">
+            <a class="btn btn-md btn-secondary " href="{% url 'recipecreate' %}">Add your cocktail</a>
+        </div>
     </div>
 </div>
 

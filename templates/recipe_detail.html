@@ -3,10 +3,11 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+
 <!--Cocktail Title-->
 <div class="row">
     <div class="text-center recipe-name">
-        <h1>{{ recipe.title }}</h1>
+        <h1 class="title">{{ recipe.title }}</h1>
     </div>
 </div>
 
@@ -14,7 +15,7 @@
     <section>
         <div class="row">
             <!--recipe image-->
-            <div class="col-sm-6 col-md-auto card box-shadow">
+            <div class="col-sm-6 image-container card recipe-detail-image">
                 {% if "placeholder" in recipe.recipe_image.url %}
                 <img class="card-image"
                     src="https://res.cloudinary.com/ddgxxa2hy/image/upload/v1661630412/yh7v8u7ajreg2fn3xcmu.png"
@@ -29,8 +30,8 @@
 
             <!--Coctail info & icons-->
 
-            <div class="col-sm-6 card recipe-detail border-light">
-                <h2 class="card-title"> About this cocktail</h2>
+            <div class="col-sm-6 card recipe">
+                <h2 class="about text-center"> About this cocktail</h2>
                 <p class="recipe-intro card-text"> {{ recipe.about |safe }}</p>
 
                 </p>
@@ -61,9 +62,9 @@
                         </li>
 
                         <li>
-                            {% with comments.count as total_comments %}
+                            {% with comment.count as total_comment %}
                             <i class="fas fa-comment"></i>
-                            <p>{{ total_reviews }} Comments</p>
+                            <p>{{ total_comment }} Comments</p>
                             {% endwith %}
                         </li>
                         <li>
@@ -94,23 +95,27 @@
 <section>
     <!--Cocktail ingredients-->
     <div class="row ">
-        <div class="col-11 card border-light recipe-detail">
+        <div class="col-sm-6 mx-auto card recipe-detail">
             <div class="card-main">
-                <h2 class="card-title"> Ingredients</h2>
+                <h2 class="ingred"> Ingredients</h2>
                 <p class="card-text">{{recipe.ingredients|safe|linebreaks}}</p>
             </div>
-            <!--steps-->
-
-            <h2 class="card-title">Steps</h2>
-            <p class="card-text">{{recipe.steps|safe|linebreaks}}</p>
+        </div>
+        <!--steps-->
+        <div class="row ">
+            <div class="col-sm-6 mx-auto card recipe-detail">
+                <h2 class="steps">Steps</h2>
+                <p class="card-text">{{recipe.steps|safe|linebreaks}}</p>
+            </div>
         </div>
 
-    </div>
+
+
 </section>
 
 <!--Comments-->
 <div class="row">
-    <div class="col-11 card border-light comments">
+    <div class="col-sm-6 mx-auto card comments">
         <h2 class="comment-title"> Comments:</h2>
         <div class="card-text">
             {% for comment in comments %}
@@ -129,7 +134,7 @@
 </div>
 
 <div class="row">
-    <div class="col-11 card border-light mt-3">
+    <div class="col-sm-6 mx-auto border-light mt-3 comments">
         <div class="card-body">
             {% if commented %}
             <div class="alert alert-sucess" role="alert">
@@ -137,15 +142,15 @@
             </div>
             {% else %}
             {% if user.is_authenticated%}
-            <h2 class="card-title">Leave a review:</h2>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form method="post">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-lg btn-secondary">Submit</button>
-                    </form>
-                    {% endif %}
-                    {% endif %}
+            <h2 class="comment">Leave a comment:</h2>
+            <p>Posting as: {{ user.username }}</p>
+            <form method="post">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-lg btn-secondary">Submit</button>
+            </form>
+            {% endif %}
+            {% endif %}
 
         </div>
 
