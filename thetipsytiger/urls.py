@@ -9,3 +9,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 
 ]
+
+handler404 = 'thetipsytiger.views.handler404'
+handler500 = 'thetipsytiger.views.handler500'

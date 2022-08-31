@@ -30,7 +30,7 @@ class Recipe(models.Model):
     recipe_image = CloudinaryField('image', default='placeholder')
     cheers = models.ManyToManyField(
         User, related_name='recipe_cheers', blank=True)
-    
+
     OPTIONS = "Options..."
     EASY = 'Quick & Easy'
     MEDIUM = 'A bit Flashy'

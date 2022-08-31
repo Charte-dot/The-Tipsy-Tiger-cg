@@ -1,3 +1,6 @@
+# pylint: disable=locally-disabled, no-member
+
+"""Imports"""
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
@@ -14,11 +17,11 @@ class MainPage(generic.ListView):
     """Displays home page for site"""
     model = Recipe
     template_name = 'main.html'
-    
+
 
 class DeclinePage(generic.TemplateView):
     """Displays main page for site"""
-    template_name = 'decline.html'     
+    template_name = 'decline.html'
 
 
 class HomePage(generic.ListView):
@@ -55,7 +58,7 @@ class RecipeDetail(LoginRequiredMixin, View):
                 "cheers": cheers,
                 "comment_form": CommentForm()
             }
-        ) 
+        )
 
     def post(self, request, slug, *args, **kwargs):
         """shows full recipe with approved comments
@@ -100,7 +103,6 @@ class RecipesList(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
 
-
     def get_queryset(self):
         """filter cocktial by skill level and alcohol base"""
         queryset = super().get_queryset()
@@ -121,11 +123,11 @@ class MyRecipes(LoginRequiredMixin, generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'myrecipes.html'
     context_object_name = 'recipe'
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['recipe'] = context['recipe'].filter(author=self.request.user)
-        
+
         return context
 
 
@@ -141,7 +143,7 @@ class RecipeCheers(LoginRequiredMixin, View):
             recipe.cheers.add(request.user)
             messages.success(request, 'You gave this cocktail a cheers!')
 
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))  
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
 class RecipeCreate(
@@ -151,7 +153,7 @@ class RecipeCreate(
 
     model = Recipe
     fields = ['recipe_image', 'title', 'about', 'skill', 'base', 'serves',
-              'ingredients', 'steps' ]
+              'ingredients', 'steps']
     template_name = 'recipe_form.html'
     success_url = reverse_lazy('myrecipes')
     success_message = "You have added a new cocktail to your list!"
