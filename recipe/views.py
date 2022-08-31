@@ -40,7 +40,7 @@ class RecipeDetail(LoginRequiredMixin, View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
-        comment = recipe.comments.filter(approved=True).order_by('created_on')
+        comments = recipe.comments.filter(approved=True).order_by('created_on')
         cheers = False
         if recipe.cheers.filter(id=self.request.user.id).exists():
             cheers = True
@@ -50,7 +50,7 @@ class RecipeDetail(LoginRequiredMixin, View):
             "recipe_detail.html",
             {
                 "recipe": recipe,
-                "comment": comment,
+                "comments": comments,
                 "commented": False,
                 "cheers": cheers,
                 "comment_form": CommentForm()
@@ -64,7 +64,7 @@ class RecipeDetail(LoginRequiredMixin, View):
 
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
-        comment = recipe.comments.filter(approved=True).order_by('created_on')
+        comments = recipe.comments.filter(approved=True).order_by('created_on')
         cheers = False
         if recipe.cheers.filter(id=self.request.user.id).exists():
             cheers = True
@@ -85,7 +85,7 @@ class RecipeDetail(LoginRequiredMixin, View):
             'recipe_detail.html',
             {
                 "recipe": recipe,
-                "comment": comment,
+                "comments": comments,
                 "commented": True,
                 "cheers": cheers,
                 "comment_form": CommentForm()

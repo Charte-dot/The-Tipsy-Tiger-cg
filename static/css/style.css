@@ -8,19 +8,20 @@
 
 
 .intro{
-    margin-top: 30%;
-    font-family: Special Elite, sans-serif;
+    text-decoration: underline  rgb(255, 119, 0);;
+    margin-top: 20%;
+    font-family: Architects Daughter, sans-serif;
     color: rgb(255, 255, 255);
     position: center;
     font-size: 250%;
 }
 
 .intro2{
-    margin-top: 5%;
-    font-family: Special Elite, sans-serif;
+    margin-top: 2%;
+    font-family: Architects Daughter, sans-serif;
     color: rgb(255, 255, 255);
     position: center;
-    font-size: 200%;
+    font-size: 150%;
 }
 
 .btn-secondary, #return{
@@ -29,26 +30,42 @@
     text-decoration: none;
     display: inline-block;
 }
-    
 
+.btn-primary{
+    margin-left: 1%;
+    margin-top: 2%;
+    color: black;
+    background-color: white;
+    border-color:  black;
 
-.yes {
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color:  rgb(255, 119, 0);;
+}
+
+.check{
+    color: green;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.93);  
-}
-
-.no {
-    text-decoration: none;
-    color: rgba(6, 6, 6, 0.93);  
-}
-
-.yes:hover{
-    color: rgba(255, 255, 255, 0.93); 
     
 }
 
-.no:hover {
-    color:  rgba(6, 6, 6, 0.93);   
+.uncheck{
+    color: red;
+    text-decoration: none;
+}
+
+
+.check:hover{
+    background-color: white;
+    color: rgba(30, 29, 29, 0.93); 
+    
+}
+
+.uncheck:hover {
+    background-color: white;
+    color:  rgba(30, 29, 29, 0.93);   
 }
 
 /* Nav bar */
@@ -104,7 +121,7 @@
 
 .hero-text {
     margin-top: 10px;
-    font-family: Special Elite, sans-serif;
+    font-family: Architects Daughter, sans-serif;
 }
 
 .hero-text h1 {
@@ -181,7 +198,7 @@ margin-bottom: 1%;
 }
 
 /* Icons */
-i {
+.icon {
 color: rgb(84, 84, 84);
 }
 
@@ -210,7 +227,7 @@ color: rgb(84, 84, 84);
 }
 
 .card-text {
-    font-family: Itim, sans-serif;
+    font-family: Architects Daughter, sans-serif; 
     text-align: center
     rgb(60, 61, 61);
 }
@@ -218,7 +235,7 @@ color: rgb(84, 84, 84);
 .recipe-info {
     background-color: rgb(255, 169, 41);
     margin-bottom: 15px; 
-    font-family: Itim, sans-serif;
+    font-family: Architects Daughter, sans-serif; 
     text-align: center
 }
 
@@ -247,14 +264,14 @@ color: rgb(84, 84, 84);
 
 .recipe-type {
     background-color: rgb(255, 169, 41);
-    font-family: Itim, sans-serif;
+    font-family: Architects Daughter, sans-serif; 
     color: rgb(60, 61, 61);
     font-size: 100%;
 }
 
 /* recipe list */
 .recipes {
-    font-family: Itim, sans-serif;
+    font-family: Architects Daughter, sans-serif; 
     font-size: 400%;
     color: rgb(60, 61, 61);
 
@@ -268,6 +285,7 @@ color: rgb(84, 84, 84);
 }
 
 .comments {
+    margin-bottom: 1%;
     font-family: Architects Daughter, sans-serif; 
     color: rgb(60, 61, 61);
     font-family: Itim, sans-serif; 
@@ -317,8 +335,13 @@ color: rgb(84, 84, 84);
 
 .recipe-detail, .comments {
     margin-left: 8%;
-    font-family: Itim, sans-serif;
+    font-family: Architects Daughter, sans-serif; 
     color: rgb(60, 61, 61);
+}
+
+.comment-title {
+    text-decoration: underline rgb(255, 169, 41);
+    font-family: Architects Daughter, sans-serif; ;
 }
 
 .col-11 {
@@ -349,7 +372,28 @@ tr {
     color: rgb(60, 61, 61);
 }
 
-.success, .warning, .delete {
+.view, .edit, .delete {
     text-decoration: none;
+    color:  rgb(60, 61, 61);
+}
+
+.btn-warning, .btn-danger, .btn-info {
+    color: rgb(60, 61, 61);
+    background-color: white;
+    border-color: black;
+}
+
+.btn-warning:hover{
     color: white;
+    background-color: rgb(243, 234, 137);
+}
+
+.btn-danger:hover{
+    color: white;
+    background-color: rgb(250, 117, 117);
+}
+
+.btn-info:hover{
+    color: white;
+    background-color: rgb(195, 247, 128);
 }
