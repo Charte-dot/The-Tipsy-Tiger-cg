@@ -24,7 +24,7 @@
     font-size: 150%;
 }
 
-.btn-secondary, #return{
+.btn-secondary {
     color: azure;
     background-color: rgb(255, 119, 0);
     text-decoration: none;
@@ -166,6 +166,27 @@ a.navbar-nav.active {
     color: rgb(71, 71, 71);
     font-size: 110%;
     font-family:Itim, sans-serif;
+}
+
+/* decline page */
+.age {
+    margin-top: 20%;
+    font-family: Architects Daughter, sans-serif;
+    color: rgb(255, 255, 255);
+    position: center;
+    font-size: 250%;
+}
+
+.return {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-light {
+    margin-top: 2%;
+    color: black;
+    background-color: white;
+    border-color:  black;
 }
 
 
