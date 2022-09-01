@@ -8,7 +8,7 @@
 
 
 .intro{
-    text-decoration: underline  rgb(255, 119, 0);;
+    text-decoration: underline  rgb(255, 119, 0);
     margin-top: 20%;
     font-family: Architects Daughter, sans-serif;
     color: rgb(255, 255, 255);
@@ -42,7 +42,7 @@
 
 .btn-primary:hover {
     background-color: white;
-    border-color:  rgb(255, 119, 0);;
+    border-color:  rgb(255, 119, 0);
 }
 
 .check{
@@ -90,9 +90,9 @@
     color: rgb(60, 61, 61);
 }
 
-.nav-link:active{
+a.nav-link.active{
     color: rgb(255, 119, 0);
-    background-color:rgb(60, 61, 61);
+    background-color:rgb(128, 128, 128);
 }
 
 
@@ -101,7 +101,7 @@
     cursor: pointer;
 }
 
-.navbar-nav a:active {
+a.navbar-nav.active {
     color: rgb(81, 81, 81);
 }
 
@@ -137,7 +137,7 @@
     font-size: 180%; 
 }
 
-.recipe-link, .nav-tab {
+.recipe-link {
     font-family: Itim, sans-serif;
     text-decoration: none;
     color: rgb(255, 119, 0); 
@@ -147,9 +147,6 @@
     color: rgb(119, 119, 119);
 }
 
-.nav-tab:hover{
-    color: rgb(119, 119, 119);
-}
 
 .join-us {
     color:  rgb(104, 103, 103);
@@ -376,7 +373,7 @@ tr {
     color:  rgb(60, 61, 61);
 }
 
-.btn-warning, .btn-danger, .btn-info {
+.btn-warning, .btn-dark, .btn-info {
     color: rgb(60, 61, 61);
     background-color: white;
     border-color: black;
@@ -384,15 +381,15 @@ tr {
 
 .btn-warning:hover{
     color: white;
-    background-color: rgb(243, 234, 137);
+    background-color: rgb(255, 240, 73);
 }
 
-.btn-danger:hover{
+.btn-dark:hover{
     color: white;
-    background-color: rgb(250, 117, 117);
+    background-color: rgb(246, 50, 50);
 }
 
 .btn-info:hover{
     color: white;
-    background-color: rgb(195, 247, 128);
+    background-color: rgb(101, 175, 4);
 }
