@@ -5,21 +5,21 @@ from .models import Recipe, User
 class TestModels(TestCase):
     """Test user and test recipe"""
     def setUp(self):
-        user = User.objects.create_user(
+        user_a = User.objects.create_user(
             'user_1',
             'testuseremail@email.com',
             'my_password'
         )
-        self.user = user
-        user = User.objects.create_user(
+        self.user_a = user_a
+        user_b = User.objects.create_user(
             'user_2',
             'email@valid.com',
             'a_password'
         )
-        self.user = user
+        self.user_b = user_b
         self.recipe = Recipe.objects.create(
             title='Test Recipe',
-            author=user,
+            author=user_b,
             skill='quick and easy',
             base='bourbon'
         )
@@ -45,3 +45,4 @@ class TestModels(TestCase):
 
         title.cheers.set([testuser.pk, testuser2.pk])
         self.assertEqual(title.cheers.count(), 2)
+        
