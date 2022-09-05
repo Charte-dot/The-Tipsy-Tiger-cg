@@ -53,18 +53,18 @@ class TestView(TestCase):
         """Test that the logged in user can view recipe details"""
         response = self.client.get(self.recipe_detail_url)
         self.assertEqual(response.status_code, 302)
-        
+
     def test_access_to_edit_recipe_requires_login(self):
         """Test that the logged in user can edit recipe details"""
         response = self.client.get(self.recipe_detail_url)
         self.assertEqual(response.status_code, 302)
-    
+
     def test_access_to_create_recipe_requires_login(self):
         """Test that the logged in user can create recipe details"""
         response = self.client.get(self.recipe_detail_url)
-        self.assertEqual(response.status_code, 302)   
-        
+        self.assertEqual(response.status_code, 302)
+
     def test_access_to_delete_recipe_requires_login(self):
         """Test that the logged in user can delete recipe details"""
         response = self.client.get(self.recipe_detail_url)
-        self.assertEqual(response.status_code, 302)     
+        self.assertEqual(response.status_code, 302)

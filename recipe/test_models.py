@@ -41,8 +41,7 @@ class TestModels(TestCase):
             username='testuser2', password='my_next_password')
 
         title = Recipe.objects.create(
-            title='boubon', author=testuser)
+            title='bourbon', author=testuser)
 
         title.cheers.set([testuser.pk, testuser2.pk])
         self.assertEqual(title.cheers.count(), 2)
-        
