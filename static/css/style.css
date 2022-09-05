@@ -10,14 +10,14 @@
 .intro{
     text-decoration: underline  rgb(255, 119, 0);
     margin-top: 20%;
-    font-family: Architects Daughter, sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 250%;
 }
 
 .intro2{
     margin-top: 2%;
-    font-family: Architects Daughter, sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 150%;
 }
@@ -50,6 +50,7 @@
 }
 
 .uncheck{
+    margin-top: 2%;
     color: red;
     text-decoration: none;
 }
@@ -110,7 +111,7 @@
 
 .hero-text {
     margin-top: 10px;
-    font-family: Architects Daughter, sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
 }
 
 .hero-text h1 {
@@ -126,12 +127,12 @@ body{
 }
 
 .popular{
-    font-family: Itim, sans-serif;
+    font-family: 'Itim', sans-serif;
     font-size: 180%; 
 }
 
 .recipe-link {
-    font-family: Itim, sans-serif;
+    font-family: 'Itim', sans-serif;
     text-decoration: none;
     color: rgb(255, 119, 0); 
 }
@@ -144,7 +145,7 @@ body{
 .join-us {
     color:  rgb(104, 103, 103);
     text-align: center;
-    font-family: Itim, sans-serif;
+    font-family: 'Itim', sans-serif;
     font-size: 150%;
     margin-bottom: 5%;
 }
@@ -158,15 +159,14 @@ body{
     background-color: rgb(255, 169, 41);
     color: rgb(71, 71, 71);
     font-size: 110%;
-    font-family:Itim, sans-serif;
+    font-family: 'Itim', sans-serif;
 }
 
 /* decline page */
 .age {
     margin-top: 20%;
-    font-family: Architects Daughter, sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
     color: rgb(255, 255, 255);
-    position: center;
     font-size: 250%;
 }
 
@@ -218,7 +218,7 @@ color: rgb(84, 84, 84);
 /* recipe cards */
 
 .recipe-name {
-    font-family: Architects Daughter, sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
     text-align: center;
     color: rgb(60, 61, 61);
     text-decoration: none;
@@ -239,34 +239,34 @@ color: rgb(84, 84, 84);
 
 .card-text {
     font-family: Architects Daughter, sans-serif; 
-    text-align: center
-    rgb(60, 61, 61);
+    text-align: center;
+    color: rgb(60, 61, 61);
 }
 
 .recipe-info {
     background-color: rgb(255, 169, 41);
     margin-bottom: 15px; 
-    font-family: Architects Daughter, sans-serif; 
+    font-family:'Architects Daughter', sans-serif; 
     text-align: center
 }
 
 
 .recipe-title {
     text-align: center;
-    font-family: Architects Daughter, sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
     color: rgb(60, 61, 61);
     text-decoration: none;
 }
 
 .card-title {
-    font-family: Architects Daughter, sans-serif;
+    font-family: 'Architects Daughter', sans-serif;
     text-align: center;
     color: rgb(60, 61, 61); 
 }
 
 
 .card-footer {
-    font-family: Architects Daughter, sans-serif; 
+    font-family: 'Architects Daughter', sans-serif; 
 }
 
 .image-container {
@@ -275,21 +275,21 @@ color: rgb(84, 84, 84);
 
 .recipe-type {
     background-color: rgb(255, 169, 41);
-    font-family: Architects Daughter, sans-serif; 
+    font-family: 'Architects Daughter', sans-serif; 
     color: rgb(60, 61, 61);
     font-size: 100%;
 }
 
 /* recipe list */
 .recipes {
-    font-family: Architects Daughter, sans-serif; 
+    font-family: 'Architects Daughter', sans-serif; 
     font-size: 400%;
     color: rgb(60, 61, 61);
 
 }
 
 .ingred, .steps, .about{
-    font-family: Architects Daughter, sans-serif; 
+    font-family: 'Architects Daughter', sans-serif; 
     text-decoration:underline rgb(255, 169, 41);
     color: rgb(60, 61, 61);
     
@@ -297,7 +297,7 @@ color: rgb(84, 84, 84);
 
 .comments {
     margin-bottom: 1%;
-    font-family: Architects Daughter, sans-serif; 
+    font-family: 'Architects Daughter', sans-serif; 
     color: rgb(60, 61, 61);
     font-family: Itim, sans-serif; 
 }
@@ -319,12 +319,12 @@ color: rgb(84, 84, 84);
 
 .like-intro {
     margin-top: 2%;
-    font-family: Itim, sans-serif;
+    font-family: 'Itim', sans-serif;
     color: rgb(60, 61, 61);
 }
 
 .edit, .delete {
-    font-family: Itim, sans-serif;
+    font-family: 'Itim', sans-serif;
     color: rgb(60, 61, 61);
     font-size: 120%;
     text-decoration: underline  rgb(255, 153, 0);
@@ -361,13 +361,13 @@ color: rgb(84, 84, 84);
 
 .recipe-detail, .comments {
     margin-left: 8%;
-    font-family: Architects Daughter, sans-serif; 
+    font-family: 'Architects Daughter', sans-serif; 
     color: rgb(60, 61, 61);
 }
 
 .comment-title {
     text-decoration: underline rgb(255, 169, 41);
-    font-family: Architects Daughter, sans-serif; ;
+    font-family: 'Architects Daughter', sans-serif; ;
 }
 
 .form-control{
