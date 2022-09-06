@@ -1,15 +1,11 @@
 /* Main page & Age verification */
 .screen {
-    background:url(https://res.cloudinary.com/ddgxxa2hy/image/upload/v1660254362/My_project-1_2_50_i0mcfy.jpg);
+    background:url(https://res.cloudinary.com/ddgxxa2hy/image/upload/v1662460688/imageedit_2_5191221431_ptkocp.gif);
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
     background-attachment: fixed;
     
-}
-
-.age-form {
-    background-color: rgba(0, 0, 0, 0.700);
 }
 
 .intro{
