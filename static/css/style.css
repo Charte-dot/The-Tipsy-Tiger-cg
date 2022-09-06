@@ -164,20 +164,13 @@ body{
 }
 
 /* decline page */
-.age {
-    margin-top: 20%;
-    font-family: 'Architects Daughter', sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: 250%;
-}
-
 .return {
     text-decoration: none;
     color: black;
 }
 
 .btn-light {
-    margin-top: 2%;
+    margin-top: 5%;
     color: black;
     background-color: white;
     border-color:  black;

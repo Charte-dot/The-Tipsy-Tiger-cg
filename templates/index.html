@@ -8,12 +8,12 @@
     <div class="container-fluid bg-image ">
         <div class="row hero-overlay hero-image img-fluid">
             <div class="col-12 hero-text text-center">
-            <h1> Welcome to The Tipsy Tiger Cocktail Guide</h1>
+                <h1> Welcome to The Tipsy Tiger Cocktail Guide</h1>
 
             </div>
         </div>
     </div>
-    
+
 </header>
 
 <div class="container-fluid">
@@ -55,30 +55,31 @@
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                    <!-- </div> -->
-                    <div class="row">
-                        {% endif %}
-                        {% endfor %}
-                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+                <!-- </div> -->
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-
-
-<div class="container-fluid join-us">
-    <div class="row col-lg-8 col-md-10 mx-auto">
-        <h1>Join Us!</h1>
-        <p class="heading">You can't buy happiness, but you can prepare a cocktail...</p>
-        <p class="heading">Choose from our range of tried, tested & loved cocktails</p>
-        <p class="heading">Even add you own personal favourites</p>
-        {% if user.is_authenticated %}
-        <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
-        {% else %}
-        <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
-        {% endif %}
+        </div>
     </div>
-</div>    
+
+    <div class="container-fluid join-us">
+        <div class="row col-lg-8 col-md-10 mx-auto">
+            <h1>Join Us!</h1>
+            <p class="heading">You can't buy happiness, but you can prepare a cocktail...</p>
+            <p class="heading">Choose from our range of tried, tested & loved cocktails</p>
+            <p class="heading">Even add you own personal favourites</p>
+            {% if user.is_authenticated %}
+            <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
+            {% else %}
+            <p><a href="{% url 'account_signup' %}" class="btn btn-lg btn-secondary">Register</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 
-
-    {% endblock %}
+{% endblock %}

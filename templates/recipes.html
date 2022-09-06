@@ -12,7 +12,7 @@
     </div>
     <!--Cocktail recipe filter-->
     <div class="row text-center">
-        <form method="GET" class="recipe-filter" role="filter">
+        <form method="GET" class="recipe-filter">
             <p>Filter by</p>
             {{ RecipeFilter.form }}
             {% csrf_token %}
@@ -81,7 +81,7 @@
 <div class="row col-lg-2 col-md-3 mx-auto">
     <!-- <div class="col text-center"> -->
         <a class="btn btn-lg btn-secondary" href="{% url 'recipecreate' %}">Add A Cocktail</a>
-    </div>
+    
 </div>
 
 {% endblock %}
