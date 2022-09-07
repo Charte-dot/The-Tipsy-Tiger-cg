@@ -19,11 +19,11 @@
                     <th>Cocktails</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </tr>
                 {% for recipe in recipe %}
                 <tr>
                     <td>{{ recipe.title }}</td>
-
                     <td><button type="button" class="btn btn-sm btn-info"><a class="view"
                                 href="{% url 'recipe_detail' recipe.slug %}">
                                 View cocktail</a></button></td>
@@ -34,11 +34,10 @@
                                 href="{% url 'recipedelete' recipe.slug %}">
                                 Delete Cocktail</a></button></td>
                 </tr>
+                {% empty %}
+                <h3> You haven't added any cocktails yet!</h3>
+                {% endfor %}
             </table>
-            {% empty %}
-            <h3> You haven't added any cocktails yet!</h3>
-            {% endfor %}
-
 
         </div>
 
