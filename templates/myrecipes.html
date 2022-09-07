@@ -24,15 +24,12 @@
                 {% for recipe in recipe %}
                 <tr>
                     <td>{{ recipe.title }}</td>
-                    <td><button type="button" class="btn btn-sm btn-info"><a class="view"
-                                href="{% url 'recipe_detail' recipe.slug %}">
-                                View cocktail</a></button></td>
-                    <td><button type="button" class="btn btn-sm btn-warning"><a class="edit"
-                                href="{% url 'recipeedit' recipe.slug %}">
-                                Edit Cocktail</a></button></td>
-                    <td><button type="button" class="btn btn-sm btn-dark"><a class="delete"
-                                href="{% url 'recipedelete' recipe.slug %}">
-                                Delete Cocktail</a></button></td>
+                    <td><a class="view" class="btn btn-sm btn-info" href="{% url 'recipe_detail' recipe.slug %}">
+                            View cocktail</a></td>
+                    <td><a class="edit" class="btn btn-sm btn-warning" href="{% url 'recipeedit' recipe.slug %}">
+                            Edit Cocktail</a></td>
+                    <td><a class="delete" class="btn btn-sm btn-dark" href="{% url 'recipedelete' recipe.slug %}">
+                            Delete Cocktail</a></td>
                 </tr>
                 {% empty %}
                 <h3> You haven't added any cocktails yet!</h3>

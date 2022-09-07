@@ -10,7 +10,7 @@
 
 .intro{
     margin-top: 30%;
-    text-decoration: underline  rgb(255, 119, 0);
+    text-decoration: underline  rgb(208, 98, 1);
     font-family: 'Architects Daughter', sans-serif;
     color: rgb(245, 245, 245);
     font-size: 250%;
@@ -25,7 +25,7 @@
 
 .btn-secondary {
     color: azure;
-    background-color: rgb(255, 119, 0);
+    background-color: rgb(208, 98, 1);
     text-decoration: none;
     display: inline-block;
 }
@@ -41,7 +41,7 @@
 
 .btn-primary:hover {
     background-color: white;
-    border-color:  rgb(255, 119, 0);
+    border-color:  rgb(208, 98, 1);
 }
 
 .check{
@@ -135,7 +135,7 @@ body{
 .recipe-link {
     font-family: 'Itim', sans-serif;
     text-decoration: none;
-    color: rgb(255, 119, 0); 
+    color: rgb(208, 98, 1); 
 }
 
 .recipe-link:hover{
@@ -157,7 +157,7 @@ body{
 }
 
 .alert {
-    background-color: rgb(255, 169, 41);
+    background-color: rgb(208, 98, 1);
     color: rgb(71, 71, 71);
     font-size: 110%;
     font-family: 'Itim', sans-serif;
@@ -239,7 +239,7 @@ color: rgb(84, 84, 84);
 }
 
 .recipe-info {
-    background-color: rgb(255, 169, 41);
+    background-color: rgb(208, 98, 1);
     margin-bottom: 15px; 
     font-family:'Architects Daughter', sans-serif; 
     text-align: center
@@ -256,7 +256,7 @@ color: rgb(84, 84, 84);
 .card-title {
     font-family: 'Architects Daughter', sans-serif;
     text-align: center;
-    color: rgb(60, 61, 61); 
+    color:rgb(60, 61, 61);  
 }
 
 
@@ -269,9 +269,9 @@ color: rgb(84, 84, 84);
 }
 
 .recipe-type {
-    background-color: rgb(255, 169, 41);
-    font-family: 'Architects Daughter', sans-serif; 
-    color: rgb(60, 61, 61);
+    background-color: rgb(208, 98, 1);
+    font-family: 'Itim', sans-serif; 
+    color: rgb(255, 255, 255);
     font-size: 100%;
 }
 
@@ -285,7 +285,7 @@ color: rgb(84, 84, 84);
 
 .ingred, .steps, .about{
     font-family: 'Architects Daughter', sans-serif; 
-    text-decoration:underline rgb(255, 169, 41);
+    text-decoration:underline rgb(208, 98, 1);
     color: rgb(60, 61, 61);
     
 }
@@ -299,11 +299,11 @@ color: rgb(84, 84, 84);
 
 .title {
     margin-top: 2%;
-    text-decoration:underline rgb(255, 169, 41);;
+    text-decoration:underline rgb(208, 98, 1);;
 }
 
 .select:hover {
-    background-color: rgb(255, 169, 41);
+    background-color: rgb(208, 98, 1);
 }
 
 
@@ -322,11 +322,11 @@ color: rgb(84, 84, 84);
     font-family: 'Itim', sans-serif;
     color: rgb(60, 61, 61);
     font-size: 120%;
-    text-decoration: underline  rgb(255, 153, 0);
+    text-decoration: underline  rgb(208, 98, 1);
 }
 
 .edit:hover {
-    color: rgb(255, 153, 0);
+    color: rgb(208, 98, 1);
 }
 .delete:hover {
     color: red;
@@ -361,8 +361,8 @@ color: rgb(84, 84, 84);
 }
 
 .comment-title {
-    text-decoration: underline rgb(255, 169, 41);
-    font-family: 'Architects Daughter', sans-serif; ;
+    text-decoration: underline rgb(208, 98, 1);
+    font-family: 'Architects Daughter', sans-serif; 
 }
 
 .form-control{
@@ -403,27 +403,9 @@ tr {
 }
 
 .view, .edit, .delete {
+    font-family:'Itim', sans-serif; 
     text-decoration: none;
     color:  rgb(60, 61, 61);
 }
 
-.btn-warning, .btn-dark, .btn-info {
-    color: rgb(60, 61, 61);
-    background-color: white;
-    border-color: black;
-}
 
-.btn-warning:hover{
-    color: white;
-    background-color: rgb(255, 240, 73);
-}
-
-.btn-dark:hover{
-    color: white;
-    background-color: rgb(246, 50, 50);
-}
-
-.btn-info:hover{
-    color: white;
-    background-color: rgb(101, 175, 4);
-}
