@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'thetipsytiger.wsgi.application'
 
 development = os.environ.get('DEVELOPMENT', False)
 
-Toggle between development/production environments.
+# Toggle between development/production environments.
 
 if development == 'True':
     DATABASES = {
