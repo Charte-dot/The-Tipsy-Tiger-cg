@@ -402,10 +402,12 @@ tr {
     color: rgb(60, 61, 61);
 }
 
-.view, .edit, .delete {
+.view {
     font-family:'Itim', sans-serif; 
     text-decoration: none;
     color:  rgb(60, 61, 61);
+    font-size: 120%;
+    text-decoration: underline  rgb(208, 98, 1);
 }
 
 
