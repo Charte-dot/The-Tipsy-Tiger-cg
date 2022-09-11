@@ -249,6 +249,10 @@ As an admin I can approve comments so that I can filter inappropriate content.( 
 **Pass/Fail: Pass**
 
 ![](documentation/User-story-ss/myrecipe-page.png)
+*My cocktails View*
+
+![](documentation/User-story-ss/edit-delete-per-user.png)
+*Within the recipe details page for users cocktail*
 
 ### Epic: Show case the most populate recipes on the main landing page 
 ### *User story*:
@@ -367,3 +371,544 @@ User is redirected to the full cocktail recipe details page. User not logged in 
 ![](documentation/User-story-ss/comment-post.png)
 
 ![](documentation/User-story-ss/comment-approval.png)
+
+
+## Testing Features
+
+### Navigation
+* Check that all navigation links work as expected.
+
+**Testing Steps**
+1.  Navigate to the website of [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)
+2. Without logging in click the multiple links on the nav bar.
+3. Log into account and click on the links to ensure the logged in user links work as expected.
+4. Scroll down each page to view 
+
+**Expected Results**
+1. User not logged in can view home, about, cocktails, register, and sign-in.
+2. Each of these links open on the expected page.
+3. Registered users can view home, about, cocktails, mycocktails and logout.
+4. Each of these links bring the user to the ecxpeted pages.
+5. Hover is active on each nav link tab.
+
+**Actual Results**
+1. User not logged in can view home, about, cocktails, register, and sign-in.
+2. Each of these links open on the expected page.
+3. Registered users can view home, about, cocktails, mycocktails and logout.
+4. Each of these links bring the user to the ecxpeted pages.
+5. Hover is active on each nav link tab.
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/no-reg-nav.png)
+*Nav bar view for unregistered/ non logged in users*
+
+![](documentation/User-story-ss/Register-nav.png)
+*Nav bar view for registered/ logged in users*
+
+### Logo
+* Check that the site logo links back to home page.
+
+**Testing Steps**
+1. Open each page from the nav bar and click the logo to return to the home page.
+
+**Expected Results**
+* Logo links back to the home page
+
+**Actual Results**
+* Logo links back to the home page.
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/logo-nav.png)
+
+### Footer
+* Check that the social media links to social media sites directs the user to the correct socila media site.
+
+**Testing Steps**
+* Click on each social media icon
+
+**Expect Results**
+* Each icon opens each corresponding social media site.
+
+**Actual Results**
+* Each icon opens each corresponding social media site.
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/Footer.png)
+
+### Cockatails/Mycocktails links
+*Check that links in Latest cocktails text direct users to correct page. Cocktails page link goes to cocktails page and My cocktails link takes not logged in users to Sign In page and logged in users to My cocktails page.
+
+**Testing Steps**
+1. Click on links without logging in
+2. Click on links after logging in
+
+**Expected Results**
+1. Both users are directed to cocktails Page
+2. Only logged in user can open My cocktails page while not logged in user is directed to Sign In page
+
+**Actual Results**
+1. Both users are directed to cocktails Page
+2. Only logged in user can open My cocktails page while not logged in user is directed to Sign In page
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/recipe-link.png)
+
+### Snapshot view on main page
+* Check that the images are of the most recent cocktails and the title, date added and author are visible.
+
+**Testing Steps**
+1. Log in to admin panel
+2. Check list of recipes
+3. Check that the three images correspond to the most recent recipe additions
+
+**Expected Result**:
+* The three recipes are the most recent additions and the most recent is first. Title, date added and author clearly labled.
+
+**Actual Result**:
+* The three recipes are the most recent additions and the most recent is first. Title, date added and author clearly labled.
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/main-snapshot.png)
+
+### About page
+* Check that the links in the about page redirect the user to register, cocktails page and login page.
+
+**Testing Steps**
+1. Logout of site if signed in.
+2. Click on register button to view register page
+3. Click on cocktails link to view coktails page
+4. click on the sign-in button to view sign in page.
+
+**Expected Results**
+1. Register button redirects to register form
+2. Cocktails link redirects to cocktails page.
+3. Sign-in button links to sign-in page.
+4. If User is already sign in and clicks register or sign-in button, page automatically redirects to cocktails page.
+
+**Actual Results**
+1. Register button redirects to register form
+2. Cocktails link redirects to cocktails page.
+3. Sign-in button links to sign-in page.
+4. If User is already sign in and clicks register or sign-in button, page automatically redirects to cocktails page.
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/about-links.png)
+
+### Cocktails page
+### Image link
+* Check that all images with summary description are visable on the page and that the title link redirects logged in user to the full cocktail recipe details. Users not logged in are redirected to the sign-in page.
+
+**Testing Steps**
+1. Be sure to be signed out and click on the title of the cocktail of your choice.
+2. Sign in and repeat step 1
+
+**Expected Results**
+1. Not logged in user is redirected to Sign In page
+2. Logged in user is redirected to full cocktail recipe detail page
+
+**Actual Results**
+1. Not logged in user is redirected to Sign In page
+2. Logged in user is redirected to full cocktail recipe detail page
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/recipe-card-link.png)
+
+### Filter box
+* Check that the filter will locate a cocktail with the filter parameters set by user.
+
+**Testing Steps**
+1. Dropdown the skill filter and choose which skill level you want.
+2. Dropdown the base filter and choose which base alcohol for the cocktails you want.
+3. Click the search icon.
+
+**Expected Results**
+1. The search icon starts the search function
+2. The search result displays one or more cocktails with the filter parameters set.
+3. 'No cocktails to view' is displayed if none are found.
+
+**Actual Results**
+1. The search icon starts the search function
+2. The search result displays one or more cocktails with the filter parameters set.
+3. 'No cocktails to view' is displayed if none are found.
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/filter-ss.png)
+
+### Comment Form
+* Checks that the form submits when a user leaves a comment.
+* Checks that success message appears after comment is left.
+* Checks that a 'Your comment is pending approval is shown until an admin approves the comment for public viewing
+
+**Testing Steps**
+1. Enter text into the body of the comment
+2. Click submit
+3. Log into the admin panel
+4. Check the box beside the comment just added and select approve in th dropdown menu
+5. Navigate back to the same recipe
+
+**Expected Results**
+1. Comment is submitted and can be viewed in the admin panel
+2. Message of success appears on submission and disappears automatically
+3. When review is approved it appears in the comments section of the recipe
+
+**Actual Results**
+1. Comment is submitted and can be viewed in the admin panel
+2. Message of success appears on submission and disappears automatically
+3. When review is approved it appears in the comments section of the recipe.
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/comments.png)
+*Comment and comment form*
+
+![](documentation/User-story-ss/comment-post.png)
+*Comment success message*
+
+![](documentation/User-story-ss/comment-approval.png)
+*Admin approval message*
+
+#### Register Page
+* Check that users can register for an account by entering a username, an optional email and a password
+* Check that the button Sign Up registers the user
+* Check that the Home button redirects to the home page
+
+**Testing Steps**
+1. Click Register
+2. Click the Home button
+3. Click on the Register button again
+4. Enter a username and password without email
+5. Click Sign Up
+6. Navigate to admin panel to see user listed
+
+**Expected Results**
+1. Home button redirects to Home page
+2. User receives error message if password does not conform to requrements of length, difference to username
+3. User registers successfully and success message displays
+4. User is listed as User in admin panel
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/register-form.png)
+
+#### Sign-In Form
+* Check that User signs in by entering username and password
+* Check that Sign In button submits the form
+* Check that Home button redirects to the home page
+
+**Testing Steps**
+1. Enter a username without password
+2. Enter a username with password
+3. Click Home
+4. Repeat steps 1 and 2 and click sign in
+
+**Expected Results**
+1. Error message displays if user does not enter a username and password
+2. User signs in successfully with username and password
+3. Success message is displayed and disappears automatically
+4. User is redirected to Home page if Home is clicked
+
+**Actual Results**
+1. Error message displays if user does not enter a username and password
+2. User signs in successfully with username and password
+3. Success message is displayed and disappears automatically
+4. User is redirected to Home page if Home is clicked
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/sign-in.png)
+
+![](documentation/User-story-ss/sign-in-pop.png)
+
+#### Sign-Out Page
+* Check that Sign Out button signs user out. 
+* Check that Home button redirects user to Home page
+* Check that user is redirected to home page after signing out:
+
+**Testing Steps**
+1. Click Sign Out in the navigation menu
+2. Click Home button
+3. Repeat step 1
+2. Click Sign Out in the Sign Out page
+
+**Expected Results**
+1. Home button redirects user to Home page
+2. Sign out button signs user out and message displays to tell user they have signed out
+3. User is redirected to Home page after signing out
+
+**Actual Results**
+1. Home button redirects user to Home page
+2. Sign out button signs user out and message displays to tell user they have signed out
+3. User is redirected to Home page after signing out
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/Sign-out.png)
+*Sign out*
+
+![](documentation/User-story-ss/sign-out-pop.png)
+*Sign out message*
+
+### Cocktail recipe form
+* Check that the user can submit a cocktail to the database for display on the website and is then redirected to the cocktails page.
+
+**Testing Steps**
+**Testing Steps**
+1. Click Add a Recipe in the My Cocktails page
+2. Click Go Back button
+3. Repeat step 1
+4. Click Submit with blank fields
+5. Complete all required fields (not image) and click Submit
+6. Click Add a cocktail and complete all fields and upload an image.
+7. Click Submit
+8. Navigate to the Home, cocktails and My cocktails pages to check the recipes are displaying, one with placeholder image and one with user's own
+
+**Expected Results**
+* Go Back button at the top redirects users to the My cocktails page
+* Messages appear to indicate if required fields have not been filled in before submission.
+* User can enter text in fields
+* Dropdown menus function correctly
+* User cannot enter incorrect values or out of range values in fields
+* User can upload an image in the image field.
+* If no image is uploaded a placeholder image is used.
+* When submit button is clicked the recipe is uploaded to the database and appears on the Home page, cocktails page and My cocktails page
+* The user is redirected to My cocktails page after submitting a recipe
+
+**Actual Results**
+* Go Back button at the top redirects users to the My cocktails page
+* Messages appear to indicate if required fields have not been filled in before submission.
+* User can enter text in fields
+* Dropdown menus function correctly
+* User cannot enter incorrect values or out of range values in fields
+* User can upload an image in the image field.
+* If no image is uploaded a placeholder image is used.
+* When submit button is clicked the recipe is uploaded to the database and appears on the Home page, cocktails page and My cocktails page
+* The user is redirected to My cocktails page after submitting a recipe
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/recipe-form.png)
+![](documentation/User-story-ss/recipe-forms.png)
+*Cocktail form*
+
+![](documentation/User-story-ss/success-alert.png)
+*Success alert*
+
+#### 404 Page
+* Check that the 404 page displays when the user enters a url which does not exist. 
+
+**Testing Steps**
+1.  Navigate to the website of [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)
+2. Type in an incorrect url
+
+**Expected Result**
+1. 404 page displays
+
+**Actual Result**
+1. 404 page displays
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/404-error.png)
+
+#### 500 Page
+* Check that a 500 server error page displays to handle internal server errors
+
+**Testing Steps**
+1. Create incorrect file path for image
+2. Navigate to the website of [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)
+
+**Expected Result**
+1. 500 page displays
+
+**Actual Result**
+1. 500 page displays
+
+**Pass/Fail: Pass**
+
+![](documentation/User-story-ss/500-error.png)
+
+## Browser compatibility
+* The project was developed on Google Chrome and no issues were detected.
+* Aditional tests were conducted on Mozilla Firefox and Microsoft edge with no issues.
+
+![](documentation/User-story-ss/google-chrome.png)
+*Google Chrome*
+
+![](documentation/User-story-ss/firefox.png)
+*Mozilla Firefox*
+
+![](documentation/User-story-ss/microsoft-edge.png)
+*Microsoft Edge*
+
+## Responsiveness
+The website was developed on a 15" laptop and a 24" monitor and no issues were found.
+
+Chrome Developer tools were used to check responsiveness on all sized devices throughout the process and adjustments were made.
+
+Additional tests were conducted in the later stages on various mobile devices: 
+* Moto G8+
+* IPhone 11
+* Iphone SE2 
+* IPhone XR. 
+
+![](documentation/User-story-ss/Iphone.png)
+
+![](documentation/User-story-ss/tablet.png)
+
+## Bugs 
+### Resolved 
+1. On the smaller screen, the drop down menu was appearing behind the hero image. I troubleshooted this with help of [developer.mozilla docs](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) and found a solution of adding 'z-index 100' to css on nav bar nav for dropdown menu on smaller screens.
+2. The logo when added to the nav bar brand, wasn't responding to css re-sizing. By using bootstrap I managed to re-size the logo to fit in the nav bar by entering the width and height into img scr tag.
+3. While testing, I had a number of <a> tags with in a button. W3C called this as an error. Upon changing out <a> tags with buttons class with in the tag. This resolved the issue of button errors on html checker.
+
+## Unresolved
+1. The nav bar is styled to highlight when a user hovers over the nav link. I had the nav bar set to stay highlighted on the link once a user chooses that page.
+The nav active was only highlighting the 'about page' and 'mycocktails page' and other pages of home, coctails, register, sign-in, sign-out wouldn't stay highlighted once the link was clicked.
+
+This bug is still unresolved as after thorough testing and code review, I cannot find what is blocking and interacting with certain links and preventing them from staying highlighted once active.
+
+![](documentation/User-story-ss/nav bug 2.png)
+
+![](documentation/User-story-ss/nav bug 2.png)
+
+## Code Validation
+### HTML Validation
+Html was validated by [The WEC Markup Validation Service](https://validator.w3.org/)
+
+No errors or warnings were found:
+
+Age verication page: 
+
+![](documentation/test-screenshots/main-test.png)
+
+Decline Page:
+
+![](documentation/test-screenshots/decline-test.png)
+
+Home Page: 
+
+![](documentation/test-screenshots/home-test.png)
+
+About Page:
+
+![](documentation/test-screenshots/About-test.png)
+
+Recipes Page
+
+![](documentation/test-screenshots/recipes-test.png)
+
+My Recipes Page
+
+![](documentation/test-screenshots/recipes-test.png)
+
+Register Page
+
+![](documentation/test-screenshots/register-test.png)
+
+Sign In Page
+
+![](documentation/test-screenshots/sign-in-test.png)
+
+Sign Out Page
+![](documentation/test-screenshots/logout-test.png)
+
+
+## HTML validation issues
+**Cocktail Filter**
+* When passing through the html for cocktails page, W3C validator threw up errors from the filter in which the template is provided by django filter form. In order to validate the html I had to code out the filter and pass through the code again. 
+
+![](documentation/test-screenshots/filter-fail.png)
+*Error on HTML validator*
+
+![](documentation/test-screenshots/filter-code.png)
+*Failed code*
+
+![](documentation/test-screenshots/filter-test.png)
+*Coded out filter to pass html validator*
+
+### CSS validator
+
+![](documentation/test-screenshots/css-checker.png)
+
+### PEP 8 Validation
+
+The following files were checked:
+
+* **Tipsy Tiger views.py**
+
+![](documentation/test-screenshots/tipsytiger-views-test.png)
+
+
+* **recipes/views.py**
+
+![](documentation/test-screenshots/Views-test.png)
+
+* **models.py**
+
+![](documentation/test-screenshots/models-test.png)
+
+* **forms.py**
+
+![](documentation/test-screenshots/forms-test.png)
+
+* **urls.py**
+
+![](documentation/test-screenshots/urls-test.png)
+
+* **admin.py**
+
+![](documentation/test-screenshots/admin-test.png)
+
+* **test_models.py**
+
+![](documentation/test-screenshots/test-models-test.png)
+
+* **test_views.py**
+
+![](documentation/test-screenshots/test-views.png)
+
+* **test_urls.py**
+
+![](documentation/test-screenshots/test-urlstest.png)
+
+* **settings.py**
+
+The test returned the following line too long errors
+
+![](documentation/test-screenshots/settings-test.png)
+
+![](documentation/test-screenshots/settings-line.png)
+
+### Lighthouse
+
+All pages were checked on lighthouse with the results between 80% and 100% for each page on mobile and desktop. Desktop results: 
+
+* **Home Page**
+
+![](documentation/test-screenshots/lighthouse-home.png)
+
+* **About Page**
+
+![](documentation/test-screenshots/lighthouse-about.png)
+
+
+* **Recipes Page**
+
+![](documentation/test-screenshots/lighthouse-recipe.png)
+
+
+* **My Recipes Page**
+
+![](documentation/test-screenshots/lighthouse-myrecipes.png)
+
+* **Recipe Detail Page**
+
+![](documentation/test-screenshots/lighthouse-recipedetails.png)
