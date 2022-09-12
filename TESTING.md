@@ -1,3 +1,44 @@
+# Table of contents:
+
+- ##  [Automated testing](#Automated-testing)
+     - [Settings for testing](#Settings-for-testing)
+     - [Unittest](#Unittest)
+
+- ##  [Manual testing](#Manual-testing)
+     - [Testing User Stories](#Testing-user-stories)
+
+- ##  [Testing features](#Testing-features)
+     - [Navigation](#Navigation)
+     - [Logo](#Logo)
+     - [Footer](#Footer)
+     - [cocktail links](#Cocktail-links)
+     - [Snap Shot](#Snap-shot)
+     - [About page](#About-page)
+     - [Navigation](#Navigation)
+     - [Cocktails page](#Cocktails-page)
+     - [Filter](#Filter)
+     - [Comment Form](#Comment-form)
+     - [Register page](#Register-page)
+     - [Sign-in](#Sign-in)
+     - [Sign-out](#Sign-out)
+     - [Cocktail recipe form](#Cocktail-recipe-form)
+     - [404 error](#404-error)
+     - [500 error](#500-error)
+
+- ##  [Browser Compatability](#Browser-Compatability)  
+     - [Responsiveness](#Responsiveness)  
+
+- ##  [Bugs](#Bugs) 
+     - [Resolved](#Resolved)
+     - [Unresolved](#Unresolved)
+
+- ##  [Code Validation](#Code-validation) 
+     - [HTML](#HTML)
+     - [HTML validation issues](#HTML-validation-issues)
+     - [CSS Validation](#CSS-validation)
+     - [PEP 8 Validation](#PEP-8-Validation)
+     - [Lighthouse](#Lighthouse)
+
 ## Automated Testing
 ### Settings for testing in local environment
 Having followed the instructions recomended in the course material, there was errors in connecting to Posgres database for testing. In order to use the Sqlite database instead, the following code was added.
@@ -438,7 +479,7 @@ User is redirected to the full cocktail recipe details page. User not logged in 
 
 ![](documentation/User-story-ss/Footer.png)
 
-### Cockatails/Mycocktails links
+### Cocktails/Mycocktails links
 *Check that links in Latest cocktails text direct users to correct page. Cocktails page link goes to cocktails page and My cocktails link takes not logged in users to Sign In page and logged in users to My cocktails page.
 
 **Testing Steps**
@@ -767,17 +808,17 @@ Additional tests were conducted in the later stages on various mobile devices:
 ### Resolved 
 1. On the smaller screen, the drop down menu was appearing behind the hero image. I troubleshooted this with help of [developer.mozilla docs](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) and found a solution of adding 'z-index 100' to css on nav bar nav for dropdown menu on smaller screens.
 2. The logo when added to the nav bar brand, wasn't responding to css re-sizing. By using bootstrap I managed to re-size the logo to fit in the nav bar by entering the width and height into img scr tag.
-3. While testing, I had a number of <a> tags with in a button. W3C called this as an error. Upon changing out <a> tags with buttons class with in the tag. This resolved the issue of button errors on html checker.
+3. While testing, I had a number of a tags with in a button. W3C called this as an error. Upon changing out a tags with buttons class with in the tag. This resolved the issue of button errors on html checker.
 
-## Unresolved
-1. The nav bar is styled to highlight when a user hovers over the nav link. I had the nav bar set to stay highlighted on the link once a user chooses that page.
+### Unresolved
+The nav bar is styled to highlight when a user hovers over the nav link. I had the nav bar set to stay highlighted on the link once a user chooses that page.
 The nav active was only highlighting the 'about page' and 'mycocktails page' and other pages of home, coctails, register, sign-in, sign-out wouldn't stay highlighted once the link was clicked.
 
 This bug is still unresolved as after thorough testing and code review, I cannot find what is blocking and interacting with certain links and preventing them from staying highlighted once active.
 
-![](documentation/User-story-ss/nav bug 2.png)
+![](documentation/User-story-ss/nav-bug2.png)
 
-![](documentation/User-story-ss/nav bug 2.png)
+![](documentation/User-story-ss/nav-bug.png)
 
 ## Code Validation
 ### HTML Validation
