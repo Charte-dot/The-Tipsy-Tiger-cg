@@ -2,7 +2,7 @@
 
 ![Mockup](documentation/User-story-ss/Mock-up.png)
 
-### *[Live link to The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)*
+### * Live link to [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)*
 
 # Table of contents:
 - ##  [Context](#context)
@@ -19,6 +19,10 @@
 - ##  [Features](#Features)
      - [Structure](#Structure)
      - [Existing Features](#Existing-features)
+     - [Age verfication](#Age-verfication)
+     - [All pages](#All-pages)
+     - [Home page](#Home-page)
+     - [About page](#About-page)
 
 
 ## Context 
@@ -197,6 +201,17 @@ The website consists of six pages:
 Home, about and cocktail pages and be viewed by all users. My cocktails is limited to registered and logged in users.
 
 ### Existing Features
+### Age verification
+* As the recipe site is based on alcohol themes, an age verification asks the user if they are over 18 
+
+![](documentation/User-story-ss/main-ss.png)
+*Main page age verfication*
+
+* If the user is not over 18 and clicks the 'not over 18 link a decline page is activated.
+
+![](documentation/User-story-ss/decline.png)
+*Age verfication decline*
+
 #### All pages
     
 *Navigation bar*:
@@ -205,10 +220,58 @@ Home, about and cocktail pages and be viewed by all users. My cocktails is limit
 ![](documentation/User-story-ss/logo-nav.png)
    *Logo*
 
-   * Links to the Home, About, Cocktails, My Cocktails, Register and Sign-in/Sign-out Pages: Home, about and cocktail pages and be viewed by all users. My cocktails is limited to registered and logged in users.
-   f the user is not signed in the Sign in and Register links are visible in the navbar. If the user is signed in the Sign In and Register links are replaced by a Sign Out link and the My Cocktails page link is visible:
+* Links to the Home, About, Cocktails, My Cocktails, Register and Sign-in/Sign-out Pages: Home, about and cocktail pages and be viewed by all users. My cocktails is limited to registered and logged in users.
+If the user is not signed in the Sign in and Register links are visible in the navbar. If the user is signed in the Sign In and Register links are replaced by a Sign Out link and the My Cocktails page link is visible:
 
-   ![](documentation/User-story-ss/nav-bug2.png)
+![](documentation/User-story-ss/nav-bug2.png)
    *Navigation for unregistered users*
 
-   ![](documentation/User-story-ss/Register-nav.png)*Navigation for logged in users*
+![](documentation/User-story-ss/Register-nav.png)*Navigation for logged in users*
+
+* The Navigation bar sticks to the top of the page and remains in view while the user is scroling for easy access around the site.
+
+![](documentation/User-story-ss/sticky-nav.png)
+   *Sticky Nav*
+
+   
+* The navigation bar collapses for smaller screen sizes
+   
+![](documentation/User-story-ss/ss-menu.png)
+   *Smaller nav bar*
+
+   
+   - Footer: Clear visiable links to social media sites, Facebook, Twitter and Instagram
+
+![](documentation/User-story-ss/Footer.png)
+   *Footer*
+
+### Home page
+* Hero Image with overlay test of the site name.
+
+![](documentation/User-story-ss/Hero-img.png)
+*Hero image*
+
+* Text directing user to the cocktail recipe page.
+
+![](documentation/User-story-ss/cocktail-link.png)
+*Cocktail recipe page link*
+
+* Snapshot of three most recent cocktails posted with title, date added and Author. This page updates automatically ever time a new cocktail is added.
+
+![](documentation/User-story-ss/main-snapshot.png)
+* Home Page Cocktail Snapshot*
+
+* Call to action button 'Register' at the bottom of the page to direct users that want to register to the registration form.
+
+![](documentation/User-story-ss/register-link.png)
+*Registeration link*
+
+### About Page
+* Image with text information about the website, with links to recipe page, register page and login page.
+
+![](documentation/User-story-ss/about-ss.png)
+*About page with link*
+
+
+
+
