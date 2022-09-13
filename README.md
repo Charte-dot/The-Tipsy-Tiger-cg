@@ -2,7 +2,7 @@
 
 ![Mockup](documentation/User-story-ss/Mock-up.png)
 
-### * Live link to [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)*
+### *Live link to [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)*
 
 # Table of contents:
 - ##  [Context](#context)
@@ -23,6 +23,7 @@
      - [All pages](#All-pages)
      - [Home page](#Home-page)
      - [About page](#About-page)
+     - [Cocktail Recipe Page](#Cocktails-recipe-page)
 
 
 ## Context 
@@ -272,6 +273,18 @@ If the user is not signed in the Sign in and Register links are visible in the n
 ![](documentation/User-story-ss/about-ss.png)
 *About page with link*
 
+### Cocktail recipe page
+* Images with description of skill level and alcohol base type visible to all users. Cocktail title is a link to full recipe details if the user is logged in, if not this redirects to the Sign-In Page. Glasses representing a like and comment icons have total number interactions beside them.
 
+![](documentation/User-story-ss/ss-recipes-page.png)
+*Cocktail page*
+
+* A filter for the skill level and alcohol base above the cocktail page enables users to filter the cocktails to a skill level of choice and a choice of alcohol based cocktail.
+
+![](documentation/User-story-ss/skill-ss.png)
+*Skill Filter*
+
+![](documentation/User-story-ss/base-ss.png)
+*Base Filter*
 
 
