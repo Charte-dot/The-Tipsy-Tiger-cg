@@ -52,12 +52,12 @@
 
                         <hr>
                         <div>
-                            <p class="card-footer"> added by {{ recipe.author }} on {{ recipe.created_on }}</p>
+                            <p class="card-footer"> Added by {{ recipe.author }} on {{ recipe.created_on }}</p>
                             <i class="fas fa-glass-cheers"> {{ recipe.number_of_cheers }} </i>
 
                             {% with comments.count as total_comments %}
-                            <i class="fas fa-comment icon"></i>
-                            <p>{{ total_comments }}</p>
+                            <i class="fas fa-comment icon">{{ recipe.comments.count }}</i>
+                            
                             {% endwith %}
                         </div>
                     </div>

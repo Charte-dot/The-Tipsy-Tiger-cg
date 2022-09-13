@@ -1,3 +1,8 @@
+
+.main-bg {
+    background-color: #f9f9f9;
+}
+
 /* Main page & Age verification */
 .screen {
     background:url(https://res.cloudinary.com/ddgxxa2hy/image/upload/v1662460688/imageedit_2_5191221431_ptkocp.gif);
@@ -247,8 +252,9 @@ color: rgb(84, 84, 84);
 .recipe-info {
     background-color: rgb(208, 98, 1);
     margin-bottom: 15px; 
-    font-family:'Architects Daughter', sans-serif; 
-    text-align: center
+    font-family:'itim', sans-serif; 
+    text-align: center;
+    color: white;
 }
 
 
@@ -257,6 +263,10 @@ color: rgb(84, 84, 84);
     font-family: 'Architects Daughter', sans-serif;
     color: rgb(60, 61, 61);
     text-decoration: none;
+}
+
+.recipe-title:hover {
+    color: white;
 }
 
 .card-title {
@@ -311,7 +321,6 @@ color: rgb(84, 84, 84);
 .select:hover {
     background-color: rgb(208, 98, 1);
 }
-
 
 
 .col-md-3 {
