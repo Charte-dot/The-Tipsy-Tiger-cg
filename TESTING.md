@@ -25,7 +25,8 @@
      - [404 error](#404-error)
      - [500 error](#500-error)
 
-- ##  [Browser Compatability](#Browser-Compatability)  
+- ##  [Browser Compatability](#Browser-Compatability)
+     - [Browsers](#Browsers)  
      - [Responsiveness](#Responsiveness)  
 
 - ##  [Bugs](#Bugs) 
@@ -35,7 +36,7 @@
 - ##  [Code Validation](#Code-validation) 
      - [HTML](#HTML)
      - [HTML validation issues](#HTML-validation-issues)
-     - [CSS Validation](#CSS-validation)
+     - [CSS validator](#CSS-validator)
      - [PEP 8 Validation](#PEP-8-Validation)
      - [Lighthouse](#Lighthouse)
 
@@ -777,6 +778,7 @@ User is redirected to the full cocktail recipe details page. User not logged in 
 ![](documentation/User-story-ss/500-error.png)
 
 ## Browser compatibility
+  ## Browsers
 * The project was developed on Google Chrome and no issues were detected.
 * Aditional tests were conducted on Mozilla Firefox and Microsoft edge with no issues.
 

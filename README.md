@@ -14,10 +14,24 @@
      - [Epics and user stories](#Epics-user-stories)
      - [Flowchart](#Flowchart)
      - [Scope](#Scope)
+     - [Wireframes](#Wireframes)
+
+- ##  [Features](#Features)
+     - [Structure](#Structure)
+     - [Existing Features](#Existing-features)
 
 
+## Context 
+The Tipsy Tiger Cocktail Guide is a recipe style website, that displays cocktail recipes created and posted by users on the site. 
 
-
+The website is simple:
+- Non registered users can view the site and can register for an account in an easy process.
+- Logged in users have a range of options available.
+- User can view full page cocktail recipe details.
+- User can create their own cocktail recipe.
+- User can edit their own cocktail recipes
+- User can delete their own cocktail recipes
+- User can interact with other posts on the site in the form of comments or liking the cocktail
 
 ## UX
 
@@ -132,12 +146,69 @@ In order to efficently build the site, 10 Epics and 19 user stories were created
 
 
 ### Flowchart
- * To assist with the Epic's and user stories in planning of the website a flowchart was created with [lucidchart](https://lucid.app/lucidchart/8619b2ff-1840-4d3a-b234-ac143540d744/edit?page=0_0&invitationId=inv_9469ea28-80f3-48d1-943c-643df72710da#)
+ * I designed a basic flowchart on [Lucid Chart](https://lucid.app/lucidchart/8619b2ff-1840-4d3a-b234-ac143540d744/edit?page=0_0&invitationId=inv_9469ea28-80f3-48d1-943c-643df72710da#) first.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. This was an essential piece to the project along side the epics and user stories as it helped me keep track of how the application would be displayed to the user and the steps the user would take within the application.
 
+- How would the flow of the website be laid out?
+- How would I deal unregistered users?
+- What benefits where there for registered and logged in users? 
+ 
  ![](documentation/User-story-ss/flowchart.png)
 
+### WireFrames
+I designed a basic wireframe to compliment the Epics, User stories and flow chart.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. Some feature have been change due to time constraints.
+
+![](documentation/wireframes/Wireframe1.png)
+
+
+![](documentation/wireframes/Wireframe2.png)
+
+
+![](documentation/wireframes/Wireframe3.png)
+
+
+![](documentation/wireframes/Wireframe4.png)
+
+
+![](documentation/wireframes/Wireframe5.png)
+
+
+![](documentation/wireframes/Wireframe6.png)
+
+
+![](documentation/wireframes/wireframe7.png)
+
+
+![](documentation/wireframes/Wireframe8.png)
 
 
 ### Scope
 
 The scope of the project was quiet extensive at the beginning. The over all goal was to give users full CRUD on all of their content. Due to time constraints this meant user's only had CRUD functionality on cocktail recipes and as this was deemed a must have and took priorty. More functionality for logged in users will be added in the future. Further front-end admin functions will be added as this project is limited to back-end django admin panel. 
+
+## Features
+### Structure 
+The website consists of six pages:
+* Home
+* About
+* Cocktails
+* My Cockatails
+* Register
+* Sign-in/Sign-Out
+Home, about and cocktail pages and be viewed by all users. My cocktails is limited to registered and logged in users.
+
+### Existing Features
+#### All pages
+    
+*Navigation bar*:
+  * Brand logo linking back to the home page.
+
+![](documentation/User-story-ss/logo-nav.png)
+   *Logo*
+
+   * Links to the Home, About, Cocktails, My Cocktails, Register and Sign-in/Sign-out Pages: Home, about and cocktail pages and be viewed by all users. My cocktails is limited to registered and logged in users.
+   f the user is not signed in the Sign in and Register links are visible in the navbar. If the user is signed in the Sign In and Register links are replaced by a Sign Out link and the My Cocktails page link is visible:
+
+   ![](documentation/User-story-ss/nav-bug2.png)
+   *Navigation for unregistered users*
+
+   ![](documentation/User-story-ss/Register-nav.png)*Navigation for logged in users*
