@@ -16,6 +16,7 @@
      - [Scope](#Scope)
      - [Wireframes](#Wireframes)
 
+
 - ##  [Features](#Features)
      - [Structure](#Structure)
      - [Existing Features](#Existing-features)
@@ -24,6 +25,10 @@
      - [Home page](#Home-page)
      - [About page](#About-page)
      - [Cocktail Recipe Page](#Cocktails-recipe-page)
+     - [My Cocktails Page](#My-cocktails-page)
+     - [Recipe detail page](#Recipe-detail-page)
+     - [Sign-In form](#Sign-In-Form)
+     - [Register form](#Register-form)
 
 
 ## Context 
@@ -162,27 +167,28 @@ In order to efficently build the site, 10 Epics and 19 user stories were created
 ### WireFrames
 I designed a basic wireframe to compliment the Epics, User stories and flow chart.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. Some feature have been change due to time constraints.
 
+* Age verification
 ![](documentation/wireframes/Wireframe1.png)
 
-
+* Home page
 ![](documentation/wireframes/Wireframe2.png)
 
-
+* About page
 ![](documentation/wireframes/Wireframe3.png)
 
-
+* Cocktail recipe page
 ![](documentation/wireframes/Wireframe4.png)
 
-
+* My cocktail Page
 ![](documentation/wireframes/Wireframe5.png)
 
-
+* Cocktail recipe form
 ![](documentation/wireframes/Wireframe6.png)
 
-
+* Registration form
 ![](documentation/wireframes/wireframe7.png)
 
-
+* Sign in form
 ![](documentation/wireframes/Wireframe8.png)
 
 
@@ -279,7 +285,7 @@ If the user is not signed in the Sign in and Register links are visible in the n
 ![](documentation/User-story-ss/ss-recipes-page.png)
 *Cocktail page*
 
-* A filter for the skill level and alcohol base above the cocktail page enables users to filter the cocktails to a skill level of choice and a choice of alcohol based cocktail.
+* A filter for the skill level and alcohol base above the cocktail page enables users to filter the cocktails to a skill level of choice and a choice of alcohol based cocktail. Clickable icon to submit the filter choices.
 
 ![](documentation/User-story-ss/skill-ss.png)
 *Skill Filter*
@@ -287,4 +293,115 @@ If the user is not signed in the Sign in and Register links are visible in the n
 ![](documentation/User-story-ss/base-ss.png)
 *Base Filter*
 
+* The cocktail title links to the full recipe details which can only be accessed by registered or logged in users. User who are not logged in are redirected to the sign-in page.
 
+![](documentation/User-story-ss/title.png)
+*Cocktail Title*
+
+* A call to action 'Add a cocktail' button will directed logged in users to my recipes page and non logged in users to the sign in page. This allows intuitive navigation on the site.
+
+![](documentation/User-story-ss/add-recipe-page.png)
+
+### My Cocktail page
+* This page can only be accessed by logged in users. The navigation link only appears when the user is logged in.
+
+* The list of cocktails added by the user are organised in a table, with the most recently created at the top of the list. This table displays the title, view cocktail, edit cocktails and delete cocktail. 
+
+![](documentation/User-story-ss/myrecipe-page.png)
+*cocktails table*
+
+* View Cocktail opens the full recipe page for that cocktail.
+* Edit cocktail opens the edit form to allow the user to make amendments to the recipe.
+
+![](documentation/User-story-ss/edit-cocktail.png)
+*Edit form*
+
+* A pop up message alerts the user that the cocktail has successfully edited.
+
+![](documentation/User-story-ss/edit-txt.png)
+*Edit message*
+
+* Delete cocktail enables a user to delete the cocktail. This removes the cocktails from the users own cocktail list and from view on the home page and cocktail page. 
+
+![](documentation/User-story-ss/delete-cocktail.png)
+*Delete cocktail confirmation*
+
+![](documentation/User-story-ss/cocktail-delete-txt.png)
+*Successful delete message*
+
+
+### Recipe Detail Page
+ Accessed only by logged in users by clicking on the View tab in the 'my cocktails' table or by the title link on the 'cocktails' page.
+
+![](documentation/User-story-ss/recipe-details-ss.png)
+*Recipe details page*
+
+* The clinking glass Icon can be clicked to give a 'Cheers' and remove the 'Cheers from a recipe. The cheers feature is a play on a like feature.
+
+* The number of 'Cheers' given to a cocktail recipe is displayed beside the icon in recipe details page and beside the icon in the cocktails page.
+
+* Message to confirm each action is displayed.
+
+![](documentation/User-story-ss/cheers-ss.png)
+*Cheers confirmation message*
+
+![](documentation/User-story-ss/remove-cheers.png)
+*Removal of cheers message*
+
+* The about section of the recipe includes, number of comments, serve amount per recipe, skill level, alcohol base and an 'Updated on field'.
+
+![](documentation/User-story-ss/About-recipe.png)
+*About page on recipe details*
+
+* If the user has created a recipe and the recipe is currently posted the author of the recipe will have two extra features on their on created recipe. An edit option and a delete option appear on the bottom of the recipe. This is only viewable to the Author of that recipe.
+This is to promote intuitive navigation. 
+
+![](documentation/User-story-ss/Author.png)
+*Extra feature for the author of the recipe*
+
+
+![](documentation/User-story-ss/non-author.png)
+*View for non author of the recipe*
+
+* Comments:
+At the bottom of the recipe ingrediants and steps is the Comment section to display comments in descending order by date.
+
+![](documentation/User-story-ss/comments2.png)
+*Comments*
+
+* Below the published comments is a from to submit a comment.
+* After submission of comment an 'pending approval' message is shown until admin approve the comment.
+
+![](documentation/User-story-ss/comments.png)
+*Comment form*
+
+![](documentation/User-story-ss/comment-approval.png)
+*Awaiting admin approval*
+
+![](documentation/User-story-ss/comment-post.png)
+*Thanks for your thoughts message*
+
+### Sign-In Form
+
+* User Signs in by entering Username and password created when registering.
+
+* An Action button for sign-in which redirects back to the home page once user is signed in. 
+
+![](documentation/User-story-ss/sign-in.png)
+*Sign-in form*
+
+![](documentation/User-story-ss/sign-in-pop.png)
+*Sign-In pop up message*
+
+
+### Register Form
+
+* Users can register for an account by entering a username, an optional email and a password.
+
+* A choice of  call to action buttons. Sign-up completes the registration and redirects user back to the home page. Home button redirects user to home page but no account has been registered. 
+
+![](documentation/User-story-ss/register-form.png)
+*Registeration form*
+
+![](documentation/User-story-ss/sign-in-pop.png)
+*Registeration success message*
