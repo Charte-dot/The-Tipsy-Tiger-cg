@@ -12,10 +12,7 @@
      - [Project Goal](#Project-goal)
      - [Target Audience](#Target-audience)
      - [Epics and user stories](#Epics-user-stories)
-     - [Flowchart](#Flowchart)
      - [Scope](#Scope)
-     - [Wireframes](#Wireframes)
-
 
 - ##  [Features](#Features)
      - [Structure](#Structure)
@@ -27,8 +24,20 @@
      - [Cocktail Recipe Page](#Cocktails-recipe-page)
      - [My Cocktails Page](#My-cocktails-page)
      - [Recipe detail page](#Recipe-detail-page)
+     - [Recipe form](#Recipe-Form)
      - [Sign-In form](#Sign-In-Form)
      - [Register form](#Register-form)
+     - [404 page](#404-page)
+     - [500 page](#500-page)
+     - [Future features](#Future-features)
+
+- ##  [Design](#Design)
+    - [Flowchart](#Flowchart)
+    - [Wireframes](#Wireframes)
+    - [Data Models](#Data-models)
+    - [Colors](#Colors)
+    - [Fonts](#Fonts)
+
 
 
 ## Context 
@@ -153,43 +162,6 @@ In order to efficently build the site, 10 Epics and 19 user stories were created
 * User Stories:
  
     * As a user I can upload a picture to enhance the content that I post to the site.[#19](https://github.com/Charte-dot/The-Tipsy-Tiger-cg/issues/19)
-
-
-### Flowchart
- * I designed a basic flowchart on [Lucid Chart](https://lucid.app/lucidchart/8619b2ff-1840-4d3a-b234-ac143540d744/edit?page=0_0&invitationId=inv_9469ea28-80f3-48d1-943c-643df72710da#) first.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. This was an essential piece to the project along side the epics and user stories as it helped me keep track of how the application would be displayed to the user and the steps the user would take within the application.
-
-- How would the flow of the website be laid out?
-- How would I deal unregistered users?
-- What benefits where there for registered and logged in users? 
- 
- ![](documentation/User-story-ss/flowchart.png)
-
-### WireFrames
-I designed a basic wireframe to compliment the Epics, User stories and flow chart.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. Some feature have been change due to time constraints.
-
-* Age verification
-![](documentation/wireframes/Wireframe1.png)
-
-* Home page
-![](documentation/wireframes/Wireframe2.png)
-
-* About page
-![](documentation/wireframes/Wireframe3.png)
-
-* Cocktail recipe page
-![](documentation/wireframes/Wireframe4.png)
-
-* My cocktail Page
-![](documentation/wireframes/Wireframe5.png)
-
-* Cocktail recipe form
-![](documentation/wireframes/Wireframe6.png)
-
-* Registration form
-![](documentation/wireframes/wireframe7.png)
-
-* Sign in form
-![](documentation/wireframes/Wireframe8.png)
 
 
 ### Scope
@@ -381,6 +353,16 @@ At the bottom of the recipe ingrediants and steps is the Comment section to disp
 ![](documentation/User-story-ss/comment-post.png)
 *Thanks for your thoughts message*
 
+### Recipe Form
+* A form complete with field to order to enable the user to add/ create cocktail recipes as part of the CRUD fuctionality.
+* Users can copy and paste recipes directly into the ingrediants and steps fields. Images can be uploaded and a placeholder image is supplied incase no image is uploaded by the user.
+* A submit button allow the user to publish the cocktail they have just created.
+* Home button redirect user back to the home page without publishing a cocktail
+
+![](documentation/User-story-ss/recipe-form.png)
+![](documentation/User-story-ss/recipe-forms.png)
+
+
 ### Sign-In Form
 
 * User Signs in by entering Username and password created when registering.
@@ -405,3 +387,88 @@ At the bottom of the recipe ingrediants and steps is the Comment section to disp
 
 ![](documentation/User-story-ss/sign-in-pop.png)
 *Registeration success message*
+
+
+### 404 page
+* A 404 page was created to handle navigational errors within the site. It alerts the user of an error and advised how to rectify the issue.
+
+![](documentation/User-story-ss/404-error.png)
+*404 error*
+
+### 500 page
+* A 500 server error page was created to handle internal server errors. This alerts the user and advised on possible fix to rectify the issue.
+
+![](documentation/User-story-ss/500-error.png)
+
+
+### Future Features
+* Addition of a search bar for easier naviagtion of cocktail recipes currently posted.
+* Refining the filter options to filter by the recipe the user liked and commented on.
+* The option for users to CRUD comments in the same style as the CRUD functionality for the cocktail recipes.
+* User log in with social media.
+* Currently images can be uploaded to the recipe form from the user's own computer or by a url. This could be further defined by size and image type to ensure consistancy throughout the site.
+
+### Design 
+
+### Flowchart
+ * I designed a basic flowchart on [Lucid Chart](https://lucid.app/lucidchart/8619b2ff-1840-4d3a-b234-ac143540d744/edit?page=0_0&invitationId=inv_9469ea28-80f3-48d1-943c-643df72710da#) first.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. This was an essential piece to the project along side the epics and user stories as it helped me keep track of how the application would be displayed to the user and the steps the user would take within the application.
+
+- How would the flow of the website be laid out?
+- How would I deal unregistered users?
+- What benefits where there for registered and logged in users? 
+ 
+ ![](documentation/User-story-ss/flowchart.png)
+
+
+ ### WireFrames
+I designed a basic wireframe to compliment the Epics, User stories and flow chart.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. Some feature have been change due to time constraints.
+
+* Age verification
+![](documentation/wireframes/Wireframe1.png)
+
+* Home page
+![](documentation/wireframes/Wireframe2.png)
+
+* About page
+![](documentation/wireframes/Wireframe3.png)
+
+* Cocktail recipe page
+![](documentation/wireframes/Wireframe4.png)
+
+* My cocktail Page
+![](documentation/wireframes/Wireframe5.png)
+
+* Cocktail recipe form
+![](documentation/wireframes/Wireframe6.png)
+
+* Registration form
+![](documentation/wireframes/wireframe7.png)
+
+* Sign in form
+![](documentation/wireframes/Wireframe8.png)
+
+
+### Data Models
+There are two models used for the database: A recipe model and a comment model.
+
+![](documentation/wireframes/Data-models.png)
+*Data Model*
+
+The googlesheet of these models can be found [Here](https://docs.google.com/spreadsheets/d/1C02nlF7PXHJwVVeX6fccqtWrPZb4RqBYxgY8-sqb3lQ/edit?usp=sharing)
+
+
+### Colors
+The following colors palette was used through the site.
+
+![](documentation/User-story-ss/ux-colors.png)
+
+* The main background color is RGB(248, 248, 248). I wanted a clean muted background color as the main images on the site would be colorful and eye catching. It is a soft muted white to take the harshness of pure white and soften the users visual experience.
+
+* The main text body is RGB(33, 37, 46), a shade of navy for the large important text on the site. I choose navy as it wasn't as harsh as black and still noticable to the user.
+
+* The nav-bar hover, cocktail titles, cocktail info are all RGB(115, 112, 112). A soft grey to contrast against the main background color. 
+
+* The predominant color of RGB(208, 98, 1) was choosen to reference back to the site logo but on a muted softer scale. All action buttons, links and text underline are this shade of orange. This choice was made to tie all the pages together and on pages like registration form where it is quite neutral, it gives a small pop of color.
+
+### Fonts
+* The fonts chosen for the site were:[Itim](https://fonts.google.com/?query=itim) the nav-bar and recipe titles.[Architects Daughter](https://fonts.google.com/?query=architects+daughter)
