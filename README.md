@@ -32,12 +32,31 @@
      - [Future features](#Future-features)
 
 - ##  [Design](#Design)
-    - [Flowchart](#Flowchart)
-    - [Wireframes](#Wireframes)
-    - [Data Models](#Data-models)
-    - [Colors](#Colors)
-    - [Fonts](#Fonts)
+     - [Flowchart](#Flowchart)
+     - [Wireframes](#Wireframes)
+     - [Data Models](#Data-models)
+     - [Colors](#Colors)
+     - [Fonts](#Fonts)
 
+- ##  [Technologies Used](#Technologies-Used)  
+     - [Languages](#Languages)
+     - [Frameworks](#Frameworks)
+     - [Database](#Database)
+     - [ Other Technologies](#Other-Technologies)
+
+- ##  [Testing](#Testing)
+     - [Tests](#Tests)
+
+- ##  [Deployment](#Deployment) 
+    - [Heroku](#Heroku)
+    - [Forking](#Forking)
+    - [Cloning](#Cloning)        
+
+- ##  [Images](#Images) 
+
+- ##  [Cocktail Recipes](#Cockatail-Recipes) 
+
+- ##  [Credits](#Credits) 
 
 
 ## Context 
@@ -179,7 +198,7 @@ The website consists of six pages:
 * Sign-in/Sign-Out
 Home, about and cocktail pages and be viewed by all users. My cocktails is limited to registered and logged in users.
 
-### Existing Features
+# Existing Features
 ### Age verification
 * As the recipe site is based on alcohol themes, an age verification asks the user if they are over 18 
 
@@ -471,4 +490,261 @@ The following colors palette was used through the site.
 * The predominant color of RGB(208, 98, 1) was choosen to reference back to the site logo but on a muted softer scale. All action buttons, links and text underline are this shade of orange. This choice was made to tie all the pages together and on pages like registration form where it is quite neutral, it gives a small pop of color.
 
 ### Fonts
-* The fonts chosen for the site were:[Itim](https://fonts.google.com/?query=itim) the nav-bar and recipe titles.[Architects Daughter](https://fonts.google.com/?query=architects+daughter)
+* The fonts chosen for the site were: [Itim](https://fonts.google.com/?query=itim) the nav-bar and recipe titles. [Architects Daughter](https://fonts.google.com/?query=architects+daughter) for all other text.
+
+
+# Technologies Used
+## Languages
+* [html](https://www.w3schools.com/html/) was used to build the front end of the site.
+* [CSS](https://www.w3schools.com/CSS/) was used to style all elements and add responsiveness to the site.
+* [JavaScript](https://www.w3schools.com/js/default.asp) was used alnog side Bootstrap to provide inactivity on the site.
+* [BootStrap 5.1.3](https://www.w3schools.com/bootstrap5/index.php) was used for extra stylings and mostly for responsiveness for all screen sizes reducing the use of media queries.
+* [Python](https://www.w3schools.com/python/default.asp) was used for backend functionality.
+* [PyPI](https://www.w3schools.com/python/python_pip.asp) used to install python packages.
+
+## Frameworks
+* [Django 3.2.8](https://www.w3schools.com/django/index.php)
+    
+    * [allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) for authentication, registration and account management.
+
+    * [Crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/install.html) for a uniformed form across the site for registeration, sign-up and create a recipe.
+
+    * [Django filter](https://django-filter.readthedocs.io/en/stable/) was used to create the filter system on the recipes. 
+
+    * [Summernote](https://summernote.org/getting-started/) used as an editor for the site.
+
+    * [Gunicorn](https://gunicorn.org/) was used as the server for the deployment application Heroku.
+
+    * [Psycopg2](https://pypi.org/project/psycopg2/) as an adptor for Python and PostgreSQL databases.
+
+    * [dj-databases](https://pypi.org/project/dj-database-url/) to parse the database URL from the environment variables in Heroku.
+
+
+    ## Databases
+    * Heroku Postgres for the production database
+    * SQlite was used for the local environment for automated testing.
+
+    ## Other Technologies
+    * [Cloudinary](https://cloudinary.com/) to host the static files and media.
+    * [Gitpod](https://www.gitpod.io/?utm_source=googleads&utm_medium=search&utm_campaign=dynamic_search_ads&utm_id=16501579379&utm_content=dsa&gclid=Cj0KCQjwmouZBhDSARIsALYcouquUuX8zY7N7IzWGRj38urfL52WB2MMf7qGe3IVNQJZqd4v1brI9kAaArMnEALw_wcB) was used for IDE.
+   * [Git](https://git-scm.com/) used for version control via the terminal in Gitpod.
+   * [GitHub](https://github.com/) used to store the code in the repository. 
+   * [Heroku](https://www.heroku.com/home) used for the cloud based platform for project deployment.
+   * [Fontawesome](https://fontawesome.com/) for all icons used on site.
+   * [Google fonts](https://fonts.google.com/) for all fonts used on site.
+   * [Balsamiq](https://balsamiq.com/wireframesgclid=Cj0KCQjwmouZBhDSARIsALYcournwJNUGD9kYhuv) used to create wireframes.
+   * [LucidChart](https://www.lucidchart.com/) used for the flow chart diagram.
+   * [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) for inspection during development to check responsivness and help debug code.
+   * [Techsini](https://techsini.com/multi-mockup/index.php) used to generate site mockup.
+   * [Google Chrome](https://www.google.com/) for previewing project during development.
+   * [Google sheets](https://www.google.com/sheets/about/) for Epics and user stories aswell as data model tables.
+   * [Adobe Express](https://www.adobe.com/express/) for the creation of site logo and background image on age verfication page.
+   * [Tinypng](https://tinypng.com/) for resizing and compressing image sizes
+   * [Coverage](https://coverage.readthedocs.io/en/6.4.4/) to general a report for automated testing.
+   * [W3C Markup Validation service](https://validator.w3.org/) For validating HTML code
+   * [W3C CSS validation service](https://jigsaw.w3.org/css-validator/)
+   * [PEP8](http://pep8online.com/) for validation of python code.
+
+
+## Testing
+### Tests
+* The full testing documentation can be accessed [here](TESTING.md)
+
+## Deployment
+### Heroku
+####  Creating the inital Django app
+* First follow these steps to create your app:
+add to local deployment section: here
+* Install Django and gunicorn: `pip3 install django gunicorn`
+* Install supporting database libraries dj_database_url and psycopg2 library: `pip3 install dj_database_url psycopg2`
+* Install Cloudinary libraries to manage photos: in the terminal window type `pip3 install dj-3-cloudinary-storage`
+* Create file for requirements: in the terminal window type `pip freeze --local > requirements.txt`
+* Create project: in the terminal window type `django-admin startproject project_name .`
+* Create app: in the terminal window type `python3 manage.py startapp app_name`
+* Add app to list of `installed apps` in settings.py file: `'app_name'`
+* Migrate changes: in the terminal window type `python3 manage.py migrate`
+* Run the server to test if the app is installed: in the terminal window type `python3 manage.py runserver`
+* If the app has been installed correctly the window will display `The install worked successfully! Congratulations!`
+
+####  Create your Heroku app
+* Navigate to the Heroku website
+* In the Heroku browser window, create an account by entering your email address and a password
+* Activate the account through the authentication email sent to your email account
+* Click the new button and select create a new app from the dropdown menu
+* Enter a name for the application which must be unique, in this case the app name is 'the-tipsy-tiger'
+* Select a region, in this case Europe
+* Click create app
+
+#### 3. Create the Database
+* In the Heroku dashboard click on the Resources tab
+* Scroll down to Add-Ons, search for and select 'Heroku Postgres'
+* In the Settings tab, scroll down to 'Reveal Config Vars' and copy the text in the box beside DATABASE_URL.
+
+#### 4. Set up Environment Variables
+* In Gitpod create a new env.py file in the top level directory
+* Add env.py to the .gitignore file
+* In env.py import the os library
+* In env.py add `os.environ["DATABASE_URL"]` = "Paste in the text link copied above from Heroku DATABASE_URL" from step 3
+Insert yours here
+* In env.py add `os.environ["SECRET_KEY"] = "Make up your own random secret key"`
+* In Heroku Settings tab Config Vars enter the same secret key created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
+
+#### 5. Connect the environment variables to Django
+
+* In your Django 'settings.py' file type:
+
+ ```
+ from pathlib import Path
+ import os
+ import dj_database_url
+
+ if os.path.isfile("env.py"):
+  import env
+ ```
+* Remove the default insecure secret key in settings.py and replace with the link to the secret key variable in Heroku by typing: `SECRET_KEY = os.environ.get(SECRET_KEY)`
+* Comment out the `DATABASES` section in settings.py and replace with:
+```
+DATABASES = {
+  'default': 
+  dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }`
+```
+#### 6. Make migrations
+* In the terminal type:
+```
+python3 manage.py makemigrations`
+python3 manage.py migrate`
+```
+
+#### 7. Set up Cloudinary for static and media files storage
+* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: `os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"`
+* In Heroku  add cloudinary url to 'config vars'
+* In Heroku config vars add DISABLE_COLLECTSTATIC with value of '1' (note: this must be removed for final deployment)
+* Add Cloudinary libraries to installed apps section of `settings.py` in this order: 
+ ```
+ 'cloudinary_storage'
+ 'django.contrib.staticfiles''
+ 'cloudinary'
+ ```
+* Connect Cloudinary to the Django app in `settings.py`:
+```
+STATIC_URL = '/static'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'STATIC')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE =
+'cloudinary_storage.storage.MediaCloudinaryStorage'
+* Link file to the templates directory in Heroku 
+* Place under the BASE_DIR: TEMPLATES_DIR = os.path.join(BASE_DIR,
+'templates')
+```
+* Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: `'DIRS': [TEMPLATES_DIR]`
+* Add Heroku Hostname to ALLOWED_HOSTS: ```ALLOWED_HOSTS =
+["the-tipsy-tiger.herokuapp.com", "localhost"]```
+
+#### 8. Create `media`, `static` and `templates` folders in top level directory
+#### 9. Create Procfile in top level directory: 
+* In Procfile add: `web: gunicorn thetipsytiger .wsgi`
+#### 10. In terminal add, commit, and push: 
+```
+git add <filename>
+git commit -m “Deployment Commit”
+git push
+```
+#### 11. Heroku Deployment: 
+* Click Deploy tab in Heroku
+* In the 'Deployment method' section select 'Github' and click the 'connect to Github' button to confirm.
+* In the 'search' box enter the Github repository name for the project: https://github.com/Charte-dot/The-Tipsy-Tiger-cg
+
+* Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository.
+
+#### 12. Final Deployment
+In the IDE: 
+* When development is complete change the debug setting to: `DEBUG = False` in `settings.py` 
+* In this project the [summernote](https://summernote.org/) editor was used so for this to work in Heroku add: `X_FRAME_OPTIONS = 'SAMEORIGIN'` to settings.py.
+* In Heroku settings config vars change the DISABLE_COLLECTSTATIC value to 0
+* Because DEBUG must be switched to True for development and False for production it is recommended that only manual deployment is used in Heroku. 
+* To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
+
+### Local Deployment: Forking and Cloning
+#### Forking the Repository
+
+* To fork the project navigate to The Tipsy Tiger cg repository at https://github.com/Charte-dot/The-Tipsy-Tiger-cg
+
+* Above the list of files click the dropdown menu.
+* Select the https option and copy link.
+* Open terminal.
+* Change the current working directory to the desires destination location.
+* Click 'fork' at the top right of the page. A forked copy of the repository will appear in the Repositoties.
+
+#### Cloning the Repository
+
+* On Github navigate to the main page of The Tipsy Tiger cg at https://github.com/Charte-dot/The-Tipsy-Tiger-cg.
+* Above the list of files click the dropdown code menu.
+* Select the https option and copy the link.
+* Open the terminal.
+* Change the current working directory to the desired destination location.
+* Type the git clone command with copied URL:
+`git clone https://github.com/Charte-dot/The-Tipsy-Tiger-cg.git`.
+* Press enter to creat the local clone.
+* For the project to run an env.py file must be created as in step 4 of 'creating your Heroku app' above. As this is not stored in Github it will not be cloned with the rest of the files.
+
+### Images
+* [Hero Image](https://images.unsplash.com/photo-1547059470-3b0c7cd958a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fGNvY2t0YWlsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60) from Unsplash by Walter Lee Oliverios
+
+* [Bourbon cocktail](https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNvY2t0YWlsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60) from Unsplash by Adam Jamie
+
+* [Back up image](https://images.unsplash.com/photo-1586338211598-e2d64cf97e28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGNvY2t0YWlsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60) from Unsplash by Andrea Riezzo
+
+* [About Image](https://images.unsplash.com/photo-1574449126805-6f11acf5a8c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60) From Unsplash by Rinck Content Studio
+
+* [Black Russian](https://www.bbcgoodfood.com/recipes/black-russian-cocktail) From bbcgoodfood
+
+* [Non alco cream liqueur](https://www.bbcgoodfood.com/recipes/non-alcoholic-irish-cream-liqueur) From bbcgoodfood.
+
+* [Singapore sling](https://www.bbcgoodfood.com/recipes/singapore-sling) From bbcgoodfood
+
+* [Brown Derby](https://www.bbcgoodfood.com/recipes/brown-derby)from bbcgoodfood
+
+* [Rhubard and Custard](https://www.bbcgoodfood.com/recipes/rhubarb-custard-cocktail) from bbcgoodfood.
+
+* [Tequila sour](https://www.acouplecooks.com/tequila-sour/) from a couple cooks
+
+* [Mojito](https://www.bbcgoodfood.com/recipes/mojito) From bbcgood foods.
+
+* [Brooklyn Cocktail](https://images.unsplash.com/photo-1572590016064-3e6ae9c04947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fG9yYW5nZSUyMGNvY2t0YWlsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60) from Unsplash by Wesley Tingey
+
+*All images from bbc good foods and a couple cooks, were screenshot, saved on local drive and uploaded to cloudinary to use within the site*
+
+## Cockatail Recipes
+
+* [Black Russian](https://www.bbcgoodfood.com/recipes/black-russian-cocktail) 
+
+* [Non alco cream liqueur](https://www.bbcgoodfood.com/recipes/non-alcoholic-irish-cream-liqueur) 
+
+* [Singapore sling](https://www.bbcgoodfood.com/recipes/singapore-sling) 
+
+* [Brown Derby](https://www.bbcgoodfood.com/recipes/brown-derby)
+
+* [Rhubard and Custard](https://www.bbcgoodfood.com/recipes/rhubarb-custard-cocktail) 
+
+* [Tequila sour](https://www.acouplecooks.com/tequila-sour/) 
+
+* [Mojito](https://www.bbcgoodfood.com/recipes/mojito) 
+
+* [Brooklyn Cocktail](https://www.acouplecooks.com/brooklyn-cocktail/) 
+
+* [Bourbon Sour](https://www.acouplecooks.com/whiskey-sour/)
+
+## Credits
+
+* [Hussain Mustafa tutorial](https://www.youtube.com/watch?v=TTeNn3kNWD8) was useful for implemantation of Django filter for the skill level and base filter system.
+
+* [Denis Ivy's tutorial](https://www.youtube.com/watch?v=EX6Tt-ZW0so) was useful for the CRUD functionality.
+
+* [The Mix](https://www.themix.co.nz/age-gate?next=%2Fcocktail-recipes%3F) was used for inspiration on a few elements on the site. 
+
+* [Very Academy](https://www.youtube.com/watch?v=GBgRMdjAx_c) was useful to get an idea on automated testing 
+
+* [StackOverflow](https://stackoverflow.com/) and [Slack](https://slack.com/intl/en-ie/) Where utilized where an issue arose with in implementing features like age verification and filter system.
