@@ -162,11 +162,6 @@ body{
     margin-bottom: 5%;
 }
 
-.join-us btn {
-    text-align: center;
-    
-}
-
 .alert {
     background-color: rgb(208, 98, 1);
     color: rgb(248, 242, 242);
@@ -178,6 +173,7 @@ body{
 .return {
     text-decoration: none;
     color: black;
+    
 }
 
 .btn-light {
@@ -185,6 +181,8 @@ body{
     color: black;
     background-color: white;
     border-color:  black;
+    display: inline-block;
+    text-align: center;
 }
 
 
@@ -245,7 +243,7 @@ color: rgb(84, 84, 84);
 
 .card-text {
     font-family: Architects Daughter, sans-serif; 
-    text-align: center;
+    
     color: rgb(60, 61, 61);
 }
 

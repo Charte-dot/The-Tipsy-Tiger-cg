@@ -126,7 +126,7 @@
             {% for comment in comments %}
             <div class="comment">
                 <p class="card-text info"> <span>{{ comment.created_on }}</span>
-                    <span>{{ comment.name }} Wrote:</span>
+                    <span>{{ comment.name }} Wrote:</span> 
                 </p>
                 {{ comment.body | linebreaks}}
             </div>
