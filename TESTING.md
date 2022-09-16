@@ -59,7 +59,7 @@ python3 manage.py migrate
 ```
 
 ### Unittest
-Unittest was used for automated testing of the project. Urls, Models, and views were tested. A total test coverage of 85% was achieved.
+Unittest was used for automated testing of the project. URLS, Models, and views were tested. A total test coverage of 85% was achieved.
 
 ![](documentation/test-screenshots/coverage-report.png)
 
@@ -71,7 +71,7 @@ The project was thoroughly tested by the developer and multiple user from friend
 To test the admin page created to fulfill this epic begin with the following steps:
 1. Navigate to the website of [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)
 2. Click on the 'Sign In' tab on the navigation bar.
-3. Sign in with admin credientials
+3. Sign in with admin credentials
 4. Navigate to [admin page](https://the-tipsy-tiger.herokuapp.com/admin)
 
 ### *User Story*
@@ -113,6 +113,7 @@ Description: The site admin is able to create, read, update and delete cocktails
 **Expected result**: The recipe is saved as 'published' to the list of recipes and viewable on the main site.
 
 **Actual Results**: The recipe is saved as 'published' to the list of recipes and viewable on the main site.
+
 **Pass/Fail: Pass**
 
 * To read/update a recipe:
@@ -122,6 +123,7 @@ Description: The site admin is able to create, read, update and delete cocktails
 
 **Expected Result**: The viewed/updated recipe is saved to the list of recipes.
 **Actual Result**: The viewed/updated recipe is saved to the list of recipes
+
 **Pass/Fail: Pass**
 
 * To delete a recipe:
@@ -130,6 +132,7 @@ Description: The site admin is able to create, read, update and delete cocktails
 
 **Expected Result**: The viewed/deleted recipe is deleted from the admin panel and not viewable on the main site.
 **Actual Results**:The viewed/deleted recipe is deleted from the admin panel and not viewable on the main site.
+
 **Pass/Fail: Pass**
 
 ### *User Story*
@@ -149,6 +152,7 @@ As an admin I can approve comments so that I can filter inappropriate content.( 
 **Actual Results**: 
 1. The approved comment is published on the website.
 2. The unapproved comment is removed from the list of comments.
+
 **Pass/Fail: Pass**
 
 ### Epic: Enable users to set up an accounton the website to access the full features.
@@ -170,6 +174,7 @@ As an admin I can approve comments so that I can filter inappropriate content.( 
 1. Message displays 'You have successfully signed in'.
 2. Sign in link in the navigation changes to Sign Out.
 3. My cocktails tab is now displayed in the navigation bar.
+
 **Pass/Fail: Pass**
 
 ![](documentation/User-story-ss/register-form.png)
@@ -270,7 +275,7 @@ As an admin I can approve comments so that I can filter inappropriate content.( 
 **Testing Steps**:
 1. Navigate to the website of [The Tipsy Tiger Cocktail Guide](https://the-tipsy-tiger.herokuapp.com/)
 2. Click the 'sign in' link on the navigation bar and sign in with username and password.
-3. Navigate to [The Tipsey Tiger](https://the-tipsy-tiger.herokuapp.com/myrecipes/) to view the list of cocktails from the logged in user.
+3. Navigate to [The Tipsy Tiger](https://the-tipsy-tiger.herokuapp.com/myrecipes/) to view the list of cocktails from the logged in user.
 4. Click on View to see the full cocktail recipe details page.
 5. Click on edit in the cocktails list to view the original recipe form, edit the field the require updating and click submit to save changes.
 6. Click on delete beside the recipe in the list to delete the cocktail recipe.
@@ -548,7 +553,7 @@ User is redirected to the full cocktail recipe details page. User not logged in 
 
 **Testing Steps**
 1. Be sure to be signed out and click on the title of the cocktail of your choice.
-2. Sign in and repeat step 1
+2. Sign in and click on the title of the cocktail of your choice.
 
 **Expected Results**
 1. Not logged in user is redirected to Sign In page
@@ -828,39 +833,39 @@ Html was validated by [The WEC Markup Validation Service](https://validator.w3.o
 
 No errors or warnings were found:
 
-Age verication page: 
+* Age verication page: 
 
 ![](documentation/test-screenshots/main-test.png)
 
-Decline Page:
+* Decline Page:
 
 ![](documentation/test-screenshots/decline-test.png)
 
-Home Page: 
+* Home Page: 
 
 ![](documentation/test-screenshots/home-test.png)
 
-About Page:
+* About Page:
 
 ![](documentation/test-screenshots/About-test.png)
 
-Recipes Page
+* Cocktails Page
 
 ![](documentation/test-screenshots/recipes-test.png)
 
-My Recipes Page
+* My Cocktails Page
 
 ![](documentation/test-screenshots/recipes-test.png)
 
-Register Page
+* Register Page
 
 ![](documentation/test-screenshots/register-test.png)
 
-Sign In Page
+* Sign In Page
 
 ![](documentation/test-screenshots/sign-in-test.png)
 
-Sign Out Page
+* Sign Out Page
 ![](documentation/test-screenshots/logout-test.png)
 
 
@@ -876,6 +881,9 @@ Sign Out Page
 
 ![](documentation/test-screenshots/filter-test.png)
 *Coded out filter to pass html validator*
+
+![](documentation/test-screenshots/About-test.png)
+*cocktails Page passed with coded out filter*
 
 ### CSS validator
 

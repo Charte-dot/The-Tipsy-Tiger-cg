@@ -75,7 +75,7 @@ The website is simple:
 
 ### Agile
 The Agile methodology was used to plan and create the project. Google sheets and Github were the tools used to demonstrate this.
-1. Projects were used to divide the project into three iterations with a simple kanban board.
+1. Github Projects were used to divide the project into three iterations with a simple kanban board.
 2. Milestones were used to create User Stories with a custom template.
 3. Issues were used to create each individual User Story. Each story defines the title, statement, and acceptance criteria.
 
@@ -90,7 +90,7 @@ The Agile methodology was used to plan and create the project. Google sheets and
 
 The target User is someone:
 * Who wants to add a homemade cocktail to impress their guests.
-* Who wants to be able to modifify and control alcohol limit in each drink.
+* Who wants to be able to modify and control alcohol limit in each drink.
 * Who wants to add the personal touch to celebrations.
 * Who wants to engage with others who have the same interest in cocktails.
 * Who wants to share their own creations and recipes.
@@ -143,7 +143,7 @@ In order to efficently build the site, 10 Epics and 19 user stories were created
     * As an unregistered user I still access content so that I can decide to register at a later time[#12](https://github.com/Charte-dot/The-Tipsy-Tiger-cg/issues/12)
 
 
-6. Epic: Enable users to Filter content to find reciepes with certain ingrediants.
+6. Epic: Enable users to Filter content to find recipes with certain ingrediants.
 
 * User Stories:
 
@@ -189,7 +189,8 @@ The scope of the project was quiet extensive at the beginning. The over all goal
 
 ## Features
 ### Structure 
-The website consists of six pages:
+The website consists of seven pages:
+* Age verification
 * Home
 * About
 * Cocktails
@@ -218,7 +219,7 @@ Home, about and cocktail pages and be viewed by all users. My cocktails is limit
 ![](documentation/User-story-ss/logo-nav.png)
    *Logo*
 
-* Links to the Home, About, Cocktails, My Cocktails, Register and Sign-in/Sign-out Pages: Home, about and cocktail pages and be viewed by all users. My cocktails is limited to registered and logged in users.
+* Links to the Home, About, Cocktails, My Cocktails, Register and Sign-in/Sign-out Pages: Home, about and cocktail pages can be viewed by all users. My cocktails is limited to registered and logged in users.
 If the user is not signed in the Sign in and Register links are visible in the navbar. If the user is signed in the Sign In and Register links are replaced by a Sign Out link and the My Cocktails page link is visible:
 
 ![](documentation/User-story-ss/nav-bug2.png)
@@ -244,7 +245,7 @@ If the user is not signed in the Sign in and Register links are visible in the n
    *Footer*
 
 ### Home page
-* Hero Image with overlay test of the site name.
+* Hero Image with overlay text of the site name.
 
 ![](documentation/User-story-ss/Hero-img.png)
 *Hero image*
@@ -257,7 +258,7 @@ If the user is not signed in the Sign in and Register links are visible in the n
 * Snapshot of three most recent cocktails posted with title, date added and Author. This page updates automatically ever time a new cocktail is added.
 
 ![](documentation/User-story-ss/main-snapshot.png)
-* Home Page Cocktail Snapshot*
+*Home Page Cocktail Snapshot*
 
 * Call to action button 'Register' at the bottom of the page to direct users that want to register to the registration form.
 
@@ -360,7 +361,7 @@ At the bottom of the recipe ingrediants and steps is the Comment section to disp
 ![](documentation/User-story-ss/comments2.png)
 *Comments*
 
-* Below the published comments is a from to submit a comment.
+* Below the published comments is a form to submit a comment.
 * After submission of comment an 'pending approval' message is shown until admin approve the comment.
 
 ![](documentation/User-story-ss/comments.png)
@@ -373,7 +374,7 @@ At the bottom of the recipe ingrediants and steps is the Comment section to disp
 *Thanks for your thoughts message*
 
 ### Recipe Form
-* A form complete with field to order to enable the user to add/ create cocktail recipes as part of the CRUD fuctionality.
+* A form with a field to complete in order to enable the user to add/ create cocktail recipes as part of the CRUD fuctionality.
 * Users can copy and paste recipes directly into the ingrediants and steps fields. Images can be uploaded and a placeholder image is supplied incase no image is uploaded by the user.
 * A submit button allow the user to publish the cocktail they have just created.
 * Home button redirect user back to the home page without publishing a cocktail
@@ -399,7 +400,7 @@ At the bottom of the recipe ingrediants and steps is the Comment section to disp
 
 * Users can register for an account by entering a username, an optional email and a password.
 
-* A choice of  call to action buttons. Sign-up completes the registration and redirects user back to the home page. Home button redirects user to home page but no account has been registered. 
+* A choice of  call to action buttons. Sign-up completes the registration and redirects user back to the home page. Home button redirects user to the home page but no account has been registered. 
 
 ![](documentation/User-story-ss/register-form.png)
 *Registeration form*
@@ -422,10 +423,11 @@ At the bottom of the recipe ingrediants and steps is the Comment section to disp
 
 ### Future Features
 * Addition of a search bar for easier naviagtion of cocktail recipes currently posted.
-* Refining the filter options to filter by the recipe the user liked and commented on.
+* Refining the filter options to filter by the recipe the user liked and commented on cocktails.
 * The option for users to CRUD comments in the same style as the CRUD functionality for the cocktail recipes.
 * User log in with social media.
 * Currently images can be uploaded to the recipe form from the user's own computer or by a url. This could be further defined by size and image type to ensure consistancy throughout the site.
+* Admin panel access from the front-end the is only accessable to admin and not displayed to users.
 
 ### Design 
 
@@ -433,7 +435,7 @@ At the bottom of the recipe ingrediants and steps is the Comment section to disp
  * I designed a basic flowchart on [Lucid Chart](https://lucid.app/lucidchart/8619b2ff-1840-4d3a-b234-ac143540d744/edit?page=0_0&invitationId=inv_9469ea28-80f3-48d1-943c-643df72710da#) first.This was to give me a template to follow and to make sure my original design that I had planned was the outcome and final layout of the application. This was an essential piece to the project along side the epics and user stories as it helped me keep track of how the application would be displayed to the user and the steps the user would take within the application.
 
 - How would the flow of the website be laid out?
-- How would I deal unregistered users?
+- How would the site handle unregistered users?
 - What benefits where there for registered and logged in users? 
  
  ![](documentation/User-story-ss/flowchart.png)
@@ -495,7 +497,7 @@ The following colors palette was used through the site.
 
 # Technologies Used
 ## Languages
-* [html](https://www.w3schools.com/html/) was used to build the front end of the site.
+* [HTML](https://www.w3schools.com/html/) was used to build the front end of the site.
 * [CSS](https://www.w3schools.com/CSS/) was used to style all elements and add responsiveness to the site.
 * [JavaScript](https://www.w3schools.com/js/default.asp) was used alnog side Bootstrap to provide inactivity on the site.
 * [BootStrap 5.1.3](https://www.w3schools.com/bootstrap5/index.php) was used for extra stylings and mostly for responsiveness for all screen sizes reducing the use of media queries.
@@ -565,12 +567,12 @@ The following colors palette was used through the site.
 8. Also while in development add `DISABLE_COLLECTSTATIC value 1`. Remove this when deploying project.
 9. Once The Config Vars is set up, scroll below to `Buildpacks` and select `Heroku/python and click save changes. 
 10. To deploy the projects, navigate to the `deploy` tab on the top nav bar.
-11. Select `Github` and a confirmation should show `connect`.
+11. Select `Github` and a confirmation should show `connected`.
 12. In the box below search for the repository you want to link up to Heroku. In this case: https://github.com/Charte-dot/The-Tipsy-Tiger-cg 
 13. When the repository has been located click connect to link Github to Heroku.
 14. Once the repository is connected, click ` Enable Automatic Deploys` for automatic deployment. In this project Automatic Deployment was not enabled.
 15. For this project I choose to Manually deploy the project, to manually deploy click `Deploy branch` instead. All changes that have been pushed to Github will then deploy.
-16. Once the build process is complete you can then view the live app by clicking `View`button.
+16. Once the build process is complete you can then view the live app by clicking `View` button.
 
 ### Local Deployment: Forking and Cloning
 #### Forking the Repository
@@ -580,7 +582,7 @@ The following colors palette was used through the site.
 * Above the list of files click the dropdown menu.
 * Select the https option and copy link.
 * Open terminal.
-* Change the current working directory to the desires destination location.
+* Change the current working directory to the desired destination location.
 * Click 'fork' at the top right of the page. A forked copy of the repository will appear in the Repositoties.
 
 #### Cloning the Repository
@@ -592,8 +594,8 @@ The following colors palette was used through the site.
 * Change the current working directory to the desired destination location.
 * Type the git clone command with copied URL:
 `git clone https://github.com/Charte-dot/The-Tipsy-Tiger-cg.git`.
-* Press enter to creat the local clone.
-* For the project to run an env.py file must be created as in step 4 of 'creating your Heroku app' above. As this is not stored in Github it will not be cloned with the rest of the files.
+* Press enter to create the local clone.
+
 
 ### Images
 * [Hero Image](https://images.unsplash.com/photo-1547059470-3b0c7cd958a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fGNvY2t0YWlsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60) from Unsplash by Walter Lee Oliverios
